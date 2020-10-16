@@ -1,0 +1,82 @@
+\RequirePackage{fix-cm}
+\documentclass[%
+    oneside, openright, titlepage, numbers=noenddot,%
+    cleardoublepage=empty,%
+    abstractoff,%
+    BCOR=5.5mm, paper=a4, fontsize=14pt,% A5 soft cover
+    %BCOR=5.5mm, paper=17cm:24cm, fontsize=10pt,% 17 cm x 24 cm
+    %BCOR=5mm, paper=15.59cm:23.39cm, fontsize=10pt,% Royal soft cover
+    %BCOR=0mm, paper=15.24cm:22.86cm, fontsize=10pt,% US-Trade hard cover
+]{scrreprt}
+\usepackage{etex}
+\reserveinserts{10}
+
+\input{A_preamble/general}
+\usepackage[final]{pdfpages}
+
+% Bibliography
+\addbibresource[label=ownpubs]{ownpubs.bib}
+\addbibresource{bibliography.bib}
+\addbibresource{misc.bib}
+
+\begin{document}
+\frenchspacing
+\raggedbottom%
+\selectlanguage{english}
+\pagenumbering{roman}
+\pagestyle{scrplain}
+
+%
+% Cover
+%
+% Uncomment and adapt these lines if you want to include a cover PDF.
+%
+%\includepdf[pages={1,{}}]{B_cover/crop/cover_front.pdf}
+%\cleardoublepage\setcounter{page}{1}
+
+%
+% Frontmatter
+%
+%\include{C_frontmatter/00_dirtytitlepage}
+\include{C_frontmatter/01_titlepage}
+\include{C_frontmatter/02_titleback}
+\cleardoublepage\include{C_frontmatter/03_dedication}
+\cleardoublepage\include{C_frontmatter/04_abstract}
+\cleardoublepage\include{C_frontmatter/05_acknowledgments}
+\pagestyle{scrheadings}
+\cleardoublepage\include{C_frontmatter/06_contents}
+
+%
+% Mainmatter
+%
+\cleardoublepage\pagenumbering{arabic}%
+\def\dir{D_chapters/0_introduction}
+\include{\dir/main}
+
+\cleardoublepage%
+\def\dir{D_chapters/1_sample-chapter}
+\include{\dir/main}
+
+% Include some blind text
+\Blinddocument
+
+\cleardoublepage%
+\def\dir{D_chapters/4_conclusion_outlook}
+\include{\dir/main}
+
+\appendix
+\cleardoublepage%
+\def\dir{D_chapters/5_appendix}
+\include{\dir/main}
+
+%
+% Backmatter
+%
+\cleardoublepage\include{E_backmatter/07_bibliography}
+
+\bookmarksetup{startatroot}
+%\pagenumbering{gobble}
+\cleardoublepage\include{E_backmatter/08_cv}
+\cleardoublepage\include{E_backmatter/09_publications}
+
+\end{document}
