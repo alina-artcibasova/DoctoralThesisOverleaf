@@ -26,17 +26,17 @@
 \pagenumbering{roman}
 \pagestyle{scrplain}
 
-%
+%*******************************************************
 % Cover
-%
+%*******************************************************
 % Uncomment and adapt these lines if you want to include a cover PDF.
 %
 %\includepdf[pages={1,{}}]{B_cover/crop/cover_front.pdf}
 %\cleardoublepage\setcounter{page}{1}
 
-%
+%*******************************************************
 % Frontmatter
-%
+%*******************************************************
 %\include{C_frontmatter/00_dirtytitlepage}
 \include{C_frontmatter/01_titlepage}
 \include{C_frontmatter/02_titleback}
@@ -46,9 +46,9 @@
 \pagestyle{scrheadings}
 \cleardoublepage\include{C_frontmatter/06_contents}
 
-%
+%*******************************************************
 % Mainmatter
-%
+%*******************************************************
 \cleardoublepage\pagenumbering{arabic}%
 \def\dir{D_chapters/0_introduction}
 \include{\dir/main}
@@ -69,9 +69,9 @@
 \def\dir{D_chapters/5_appendix}
 \include{\dir/main}
 
-%
+%*******************************************************
 % Backmatter
-%
+%*******************************************************
 \cleardoublepage\include{E_backmatter/07_bibliography}
 
 \bookmarksetup{startatroot}

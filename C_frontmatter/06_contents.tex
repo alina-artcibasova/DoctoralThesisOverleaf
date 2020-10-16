@@ -21,33 +21,35 @@
     \let\clearpage\relax
     \let\cleardoublepage\relax
     \let\cleardoublepage\relax
+    
     %*******************************************************
     % List of Figures
     %*******************************************************
-    %\phantomsection
-    % \refstepcounter{dummy}
-    %\addcontentsline{toc}{chapter}{\listfigurename}
-    % \pdfbookmark[1]{\listfigurename}{lof}
-    % \listoffigures
+    \phantomsection
+    \refstepcounter{dummy}
+    \addcontentsline{toc}{chapter}{\listfigurename}
+    \pdfbookmark[1]{\listfigurename}{lof}
+    \listoffigures
 
-    % \vspace{8ex}
-
+    \vspace{8ex}
+    \newpage
+    
     %*******************************************************
     % List of Tables
     %*******************************************************
-    %\phantomsection
-    % \refstepcounter{dummy}
-    %\addcontentsline{toc}{chapter}{\listtablename}
-    % \pdfbookmark[1]{\listtablename}{lot}
-    % \listoftables
+    \phantomsection
+    \refstepcounter{dummy}
+    \addcontentsline{toc}{chapter}{\listtablename}
+    \pdfbookmark[1]{\listtablename}{lot}
+    \listoftables
 
-    % \vspace{8ex}
-    % \newpage
+    \vspace{8ex}
+    \newpage
 
     %*******************************************************
     % List of Listings
     %*******************************************************
-      %\phantomsection
+    %\phantomsection
     %\refstepcounter{dummy}
     %\addcontentsline{toc}{chapter}{\lstlistlistingname}
     %\pdfbookmark[1]{\lstlistlistingname}{lol}
@@ -55,7 +57,9 @@
 
     %\vspace{8ex}
 
+    %*******************************************************
     % Notation
+    %*******************************************************
     \refstepcounter{dummy}
     \pdfbookmark[1]{Notation}{notation}
     \markboth{\spacedlowsmallcaps{Notation}}{\spacedlowsmallcaps{Notation}}
@@ -77,7 +81,7 @@
     \sisetup{separate-uncertainty=false}
     \vskip -2em
     \begin{tabularx}{\textwidth}{lX}
-$c$ & speed of light in vacuum, $c=\u{299792458}{\metre\per\second}$ \\
+    $c$ & speed of light in vacuum, $c=\u{299792458}{\metre\per\second}$ \\
     \end{tabularx}
     \begin{flushright}
     (CODATA 2014~\cite{codata})
