@@ -141,30 +141,132 @@ v_C(n_k, n_d, n_{m+}, n_{m-}) =\\ v_{0k}-\frac{v_{0k}}{f_{Sk}}\frac{f_C(n_k, n_d
 \end{split}
 \end{equation}
 
-
 By shuffling the second and third terms in this equation, we get the expression for the cargo force
- ,
- ,
- .
+
+\begin{equation}
+\begin{split}
+v_{0k} + v_{0d}  = \\
+\frac{v_{0k}}{f_{Sk}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_kC_k(n_{m+}, n_k)} + \frac{v_{0d}}{f_{Sd}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_dC_d(n_{m-},n_d)}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+v_{0k} + v_{0d}  = \\
+f_C(n_k, n_d, n_{m+}, n_{m-}) \big( \frac{v_{0k}}{f_{Sk}n_kC_k(n_{m+}, n_k)} + \frac{v_{0d}}{f_{Sd}n_dC_d(n_{m-},n_d)} \big)
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+v_{0k} + v_{0d}  = \\
+f_C(n_k, n_d, n_{m+}, n_{m-}) \big( \frac{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d) + v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)} \big)
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+(v_{0k} + v_{0d})\frac{f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d) + v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}
+\end{split}
+\end{equation}
+
 Now, for convenience we rewrite the equation:
- ,
- ,
- ,
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+(v_{0k} + v_{0d})\frac{f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)}
+{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d) (1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+\frac{v_{0k}f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d) + v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)}
+{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d) (1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+\frac{f_{Sk}n_kC_k(n_{m+}, n_k) + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)}}
+{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+f_{Sk}n_kC_k(n_{m+}, n_k) \frac{1}{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})} + \\
+f_{Sd}n_dC_d(n_{m-},n_d)\frac{\frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)}}
+{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+f_{Sk}n_kC_k(n_{m+}, n_k) \frac{1}{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})} + \\
+f_{Sd}n_dC_d(n_{m-},n_d)\frac{1+\frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)}-1}
+{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
 to get the following expression for cargo force as a function of motor abundances
- , 
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+f_{Sk}n_kC_k(n_{m+}, n_k) \lambda(n_k, n_d, n_{m+}, n_{m-}) + \\
+f_{Sd}n_dC_d(n_{m-},n_d)( 1 - \lambda(n_k, n_d, n_{m+}, n_{m-}) )
+\end{split}
+\end{equation}
+
 where
- .
-After computing the cargo force, we can calculate the expressions for the kinesin and dynein forces:
- ,  ,
-and using those expressions, the expressions for myosin forces
- ,  .
-In the two-dimensional case, dyneins and kinesins would still be walking along the microtubule, such that only the expressions for the myosins would change. Myosin forces are involved in the calculation of   and  , but if we examine the formulas, we see that   are simply cumulative forces created by plus- and minus-end myosin motors. Thus, we can easily substitute these terms for  , where   is a projection of the stall force of a motor   on the direction of the microtubule. Similarly, expressions for myosin forces are computed individually for each motor with   being substituted by the projection .
+
+\begin{equation}
+\lambda(n_k, n_d, n_{m+}, n_{m-}) = \frac{1}{1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)}}
+\end{equation}
+
+After computing the cargo force, we can calculate the expressions for the kinesin and dynein forces as described in (2.27-2.30). Using those expressions we get the expressions for myosin forces from stall forces using (2.26)
+
+\begin{equation}
+f_{m+} = \frac{f_{Sm+}f_k}{f_{Sk}}, 
+f_{m-} =  \frac{f_{Sm-}f_d}{f_{Sd}}
+\end{equation}
+
+In the two-dimensional case, dyneins and kinesins would still be walking along the microtubule, such that only the expressions for the myosins would change. Myosin forces are involved in the calculation of $C_k(n_{m+}, n_k)$ and $C_d(n_{m-},n_d)$, but if we examine the formulas, we see that $n_{m\pm}f_{Sm\pm}$ are simply cumulative forces created by plus- and minus-end myosin motors. Thus, we can easily substitute these terms for $\sum_{i}\hat{f}^i_{Sm\pm}$, where $\hat{f}^i_{Sm\pm}$ is a projection of the stall force of a myosin motor $i$ on the direction of the microtubule. Similarly, expressions for myosin forces are computed individually for each motor with $f_{Sm\pm}$ being substituted by the projection $\hat{f}^i_{Sm\pm}$.
+
 To avoid division by zero, in simulations we assume that there are always one dynein and one kinesin bound to the endosome outside of the fusion pore because the endosome had to be transported inside the cell to initiate fusion pore formation. Due to the architecture of the Tug-of-War model and since all the microtubular motors can only generate forces along the microtubule, adding more endosomal motors would simply offset the optimal amount of dynein motors required for efficient breakage. All other motors are bound to the capsid from the very start of the simulation.
-For simplicity, here we disregard tug-of-war between myosins in the direction perpendicular to the microtubule. However, this interaction can be computed and included into simulations similarly, by using the results of (Gennerich et al., 2007; Muller et al., 2008; Norstrom et al., 2010) for two motors:
- , where  .
-Like before, we substitute   for  , where   are projections of the stall force of motor i in the direction perpendicular to the microtubule. Knowing  , we can compute the motor forces as:
- ,  .
+
+For simplicity, here we disregard tug-of-war between myosins in the direction perpendicular to the microtubule. However, this interaction can be computed and included into simulations similarly, by using the results of \cite{gennerich2007force, muller2008tug, norstrom2010unconventional} for two motors:
+
+\begin{equation}
+\tilde{f}_C(n_{m+}, n_{m-}) = n_{m+}f_{Sm+}\tilde{\lambda}(n_{m+}, n_{m-}) + n_{m-}f_{Sm+}(1 - \tilde{\lambda}(n_{m+}, n_{m-}))
+\end{equation}
+
+where
+
+\begin{equation}
+\tilde{\lambda}(n_{m+}, n_{m-}) = \frac{1}{1+\frac{n_{m+}f_{Sm+}v_{0m-}}{n_{m-}f_{Sm-}v_{0m+}}}
+\end{equation}
+ 
+Like before, we substitute $n_{m\pm}f_{Sm\pm}$ for $\sum_{i}\tilde{f}^i_{Sm\pm}$, where $\tilde{f}^i_{Sm\pm}$ are projections of the stall force of motor i in the direction perpendicular to the microtubule. Knowing $\tilde{f}_C(n_{m+}, n_{m-})$, we can compute the motor forces as:
+
+\begin{equation}
+\tilde{f}_{m+} = \frac{\tilde{f}_C(n_{m+}, n_{m-})}{n_{m+}}
+\end{equation}
+
+\begin{equation}
+\tilde{f}_{m-} = \frac{\tilde{f}_C(n_{m+}, n_{m-})}{n_{m-}}
+\end{equation}
+ 
 During simulations of the mass-spring model, each motor configuration has a fixed number of each type of motor, but the placement and the directions of cytoskeletal filaments are randomized. The model is simulated for one microsecond of system time at least 100 times for each motor configuration using the MATLAB ODE solver ode15s (Mathworks, Natick / MA).
-After a simulation, we examine the distance between all neighboring nodes in both   and   directions. If during the simulation the combined motor forces were sufficient to make any of the distances exceed the RNP complex diameter (a mock-up example for the one-dimensional case of break/no break scenarios showed in Figure S1A) for at least half the simulated system time (to avoid counting transient breaks), we classified the capsid as broken. Usually, however, if capsid breakage occurs, the initial break happens early in the simulation and persists through 80-90% of the simulation time (Figure S1B).
-To analyze the robustness of the simulation results to changes in capsid parameters, we fixed a combination of motors (5 myosins and 1 dynein) that produced approximately 50% breakage, and varied the capsid bond parameters stiffness   and dissociation energy  . The values used in our simulations were  [0.001, 0.002, 0.003, 0.004, 0.005] N/m and  [10, 12, 14, 16, 18, 20] kJ, where boldface indicates the default values (Figure S1C).
+
+After a simulation, we examine the distance between all neighboring nodes in both   and   directions. If during the simulation the combined motor forces were sufficient to make any of the distances exceed the RNP complex diameter (a mock-up example for the one-dimensional case of break/no break scenarios showed in Figure S1A) for at least half the simulated system time (to avoid counting transient breaks), we classified the capsid as broken. Usually, however, if capsid breakage occurs, the initial break happens early in the simulation and persists through 80-90\% of the simulation time (Figure S1B).
+
+To analyze the robustness of the simulation results to changes in capsid parameters, we fixed a combination of motors (5 myosins and 1 dynein) that produced approximately 50\% breakage, and varied the capsid bond parameters stiffness $k_e$ and dissociation energy $D_e$. The values used in our simulations were $k_e \in$ [0.001, \textbf{0.002}, 0.003, 0.004, 0.005] N/m and $D_e \in$ [10, 12, \textbf{14}, 16, 18, 20] kJ, where boldface indicates the default values (Figure S1C).
+
 To simplify computation of the capsid breakage probability, we interpolated it as a function of the total amount of molecular motors and the number of dynein motors using the R package akima on the basis of the values obtained from simulation of the mass-spring model (Figure S1D).
