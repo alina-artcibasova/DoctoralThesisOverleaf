@@ -12,12 +12,23 @@ There's a following observation: if you don't treat the cold, it will pass in  w
 }%
 \vskip 1em
 
+\textit{In silico} modelling often has two competing goals: to gain a new understanding of the system from the available knowledge, and to use available data to predict future progression of the system in question.
+
+Recent example of COVID-19 shows that viral \textit{in silico} modelling often primarily focuses on the second goal. Such focus makes sense due to the time sensitive nature of a global pandemic, novel under-researched pathogen, and existing limitations in data reporting.
+
+However, other viruses, such as, for example, influenza, have been extensively studied over the last 100 years, and have lots of structure, function, and host interaction information available. Despite this dearth of knowledge, influenza models still primary use small datasets with few observed variables to fit a small model of infection, which are rarely (if ever) examined under other infection conditions. While there is a certain benefit to the use of tractable and understandable models, their minimalist structure doesn't allow for inference on specific molecular targets for intervention.
+
+Meanwhile, attempts to introduce additional knowledge of underlying intracellular processes usually end up with models still struggle to capture other infectious conditions, but also rely on many unobserved quantities and variables.
+
+Ultimately, the struggle boils down to the problem all multiscale models face \cite{qu2011multi} - hierarchical organization of systems is an artifact of our ability to observe them. In a process of mathematical modelling we need to bridge these apparent gaps between observed spacial and temporal scales, while preserving the relevant detail, which makes the inclusion of smaller scales important.
+
+In this work, I attempt to provide a case study for how such challenge can be approached. I use small scale models to answer specific questions about influenza infection, and then use approximated predictions made by those small scales models to make judgements about larger scale outcomes. This approach can, perhaps, be conceptualized as a "matryoshka" (Russian nesting doll): each individual doll can be used separately, but together they introduce the user to new concepts and experiences which just one big doll would not able to tackle.
 
 \input{D_chapters/0_introduction/1_Burden}
 
 \input{D_chapters/0_introduction/2_Structure}
 
-\input{D_chapters/0_introduction/3_InfectionCourse}
+\input{D_chapters/0_introduction/3_Infection}
 
 \input{D_chapters/0_introduction/4_PreventionTreatment}
 
