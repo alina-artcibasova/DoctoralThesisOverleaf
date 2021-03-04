@@ -1,0 +1,218 @@
+\section{Derivation of two dimensional Tug-of-War equations}
+\label{appendix:2DTugOfWar}
+
+First, let us examine the one-dimensional case, where all the motors walk along the microtubule. Analogously to the two-motor scenario  \cite{gennerich2007force, muller2008tug, norstrom2010unconventional}, we write a force balance.
+
+\begin{equation}
+n_kf_k + n_{m+}f_{m+} = -n_df_d - n_{m-}f_{m-} = f_C(n_k, n_d, n_{m+}, n_{m-})
+\end{equation}
+
+where $n_k$, $n_d$, $n_{m+}$, $n_{m-}$ are motor numbers and $f_k$, $f_d$, $f_{m+}$, $f_{m-}$ are forces of kinesin, dynein, plus- and minus-end myosin motors, respectively. The cargo force is determined by the condition that all motors move with the same velocity $v_C$ , as given by
+
+\begin{equation}
+v_C(n_k, n_d, n_{m+}, n_{m-}) = v_k(f_k) = v_{m+}(f_{m+}) = - v_d(f_d) = - v_{m-}(f_{m-})
+\end{equation}
+
+With this definition follows for the left part of the force balance equation Eq. (0.1)
+
+\begin{equation}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = n_kf_k + n_{m+}f_{m+} = n_kf_k\big(1 + \frac{n_{m+}f_{m+}}{n_kf_{k}}\big)
+\end{equation},
+
+which gives us an expression for the kinesin force:
+
+\begin{equation}
+f_k = \frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_k\big(1 + \frac{n_{m+}f_{m+}}{n_kf_{k}}\big)}
+\end{equation}.
+
+Analogously, for the right part and the dynein force, we obtain:
+
+\begin{equation}
+f_d = -\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_d\big(1 + \frac{n_{m-}f_{m-}}{n_df_{d}}\big)}
+\end{equation}.
+
+For simplicity, we assume here that the ratio of motor forces moving in the same direction is proportionate to the ratio of their stall forces (indicated by subscript S):
+
+\begin{equation}
+\frac{f_{m+}}{f_k} \propto \frac{f_{Sm+}}{f_{Sk}}, 
+\frac{f_{m-}}{f_d} \propto \frac{f_{Sm-}}{f_{Sd}}
+\end{equation}
+
+This allows us to write the expressions for kinesin and dynein forces as follows
+
+\begin{equation}
+f_k = \frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_kC_k(n_{m+}, n_k)}
+\end{equation}
+
+\begin{equation}
+f_d = -\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_dC_d(n_{m-},n_d)}
+\end{equation}
+
+where
+
+\begin{equation}
+C_k(n_{m+}, n_k) = 1 + \frac{n_{m+}f_{Sm+}}{n_kf_{Sk}}
+\end{equation}
+
+\begin{equation}
+C_d(n_{m-},n_d) = 1 + \frac{n_{m-}f_{Sm-}}{n_df_{Sd}}
+\end{equation}
+
+We know that the velocity of a motor can be expressed as a function of the load force \cite{muller2008tug}:
+
+\begin{equation}
+v(f) = \left\{ \begin{aligned}
+v_{forward} (1 - \frac{|f|}{f_S}), for 0 \leq  f \leq f_S\\
+v_{backward} (1 - \frac{f}{f_S}), for f > f_S
+\end{aligned}\right.
+\end{equation}
+
+Now we can use the expression for the cargo velocity to derive:
+
+\begin{equation}
+v_C(n_k, n_d, n_{m+}, n_{m-}) = v_k(f_k) = - v_d(-f_d)
+\end{equation}
+
+\begin{equation}
+\begin{split}
+v_C(n_k, n_d, n_{m+}, n_{m-}) = v_{0k}\big(1-\frac{f_k}{f_{Sk}}\big) =\\
+v_{0k}\big(1-\frac{1}{f_{Sk}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_kC_k(n_{m+}, n_k)} = \\
+v_{0k}-\frac{v_{0k}}{f_{Sk}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_kC_k(n_{m+}, n_k)}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+v_C(n_k, n_d, n_{m+}, n_{m-}) = -v_{0d}\big(1-\frac{f_d}{f_{Sd}}\big) =\\ -v_{0d}\big(1-\frac{1}{f_{Sd}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_dC_d(n_{m-},n_d)}\big) = \\
+-\big(v_{0d}-\frac{v_{0d}}{f_{Sd}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_dC_d(n_{m-},n_d)}\big)
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+v_C(n_k, n_d, n_{m+}, n_{m-}) =\\ v_{0k}-\frac{v_{0k}}{f_{Sk}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_kC_k(n_{m+}, n_k)} =
+-\big(v_{0d}-\frac{v_{0d}}{f_{Sd}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_dC_d(n_{m-},n_d)}\big)
+\end{split}
+\end{equation}
+
+By shuffling the second and third terms in this equation, we get the expression for the cargo force
+
+\begin{equation}
+\begin{split}
+v_{0k} + v_{0d}  = \\
+\frac{v_{0k}}{f_{Sk}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_kC_k(n_{m+}, n_k)} + \frac{v_{0d}}{f_{Sd}}\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_dC_d(n_{m-},n_d)}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+v_{0k} + v_{0d}  = \\
+f_C(n_k, n_d, n_{m+}, n_{m-}) \big( \frac{v_{0k}}{f_{Sk}n_kC_k(n_{m+}, n_k)} + \frac{v_{0d}}{f_{Sd}n_dC_d(n_{m-},n_d)} \big)
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+v_{0k} + v_{0d}  = \\
+f_C(n_k, n_d, n_{m+}, n_{m-}) \big( \frac{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d) + v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)} \big)
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+(v_{0k} + v_{0d})\frac{f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d) + v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}
+\end{split}
+\end{equation}
+
+Now, for convenience we rewrite the equation:
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+(v_{0k} + v_{0d})\frac{f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)}
+{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d) (1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+\frac{v_{0k}f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d) + v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)}
+{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d) (1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+\frac{f_{Sk}n_kC_k(n_{m+}, n_k) + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)f_{Sd}n_dC_d(n_{m-},n_d)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)}}
+{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+f_{Sk}n_kC_k(n_{m+}, n_k) \frac{1}{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})} + \\
+f_{Sd}n_dC_d(n_{m-},n_d)\frac{\frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)}}
+{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+f_{Sk}n_kC_k(n_{m+}, n_k) \frac{1}{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})} + \\
+f_{Sd}n_dC_d(n_{m-},n_d)\frac{1+\frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)}-1}
+{(1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)})}
+\end{split}
+\end{equation}
+
+to get the following expression for cargo force as a function of motor abundances
+
+\begin{equation}
+\begin{split}
+f_C(n_k, n_d, n_{m+}, n_{m-}) = \\
+f_{Sk}n_kC_k(n_{m+}, n_k) \lambda(n_k, n_d, n_{m+}, n_{m-}) + \\
+f_{Sd}n_dC_d(n_{m-},n_d)( 1 - \lambda(n_k, n_d, n_{m+}, n_{m-}) )
+\end{split}
+\end{equation}
+
+where
+
+\begin{equation}
+\lambda(n_k, n_d, n_{m+}, n_{m-}) = \frac{1}{1 + \frac{v_{0d}f_{Sk}n_kC_k(n_{m+}, n_k)}{v_{0k}f_{Sd}n_dC_d(n_{m-},n_d)}}
+\end{equation}
+
+After computing the cargo force, we can calculate the expressions for the kinesin and dynein forces as described in (2.27-2.30). Using those expressions we get the expressions for myosin forces from stall forces using (2.26)
+
+\begin{equation}
+f_{m+} = \frac{f_{Sm+}f_k}{f_{Sk}}, 
+f_{m-} =  \frac{f_{Sm-}f_d}{f_{Sd}}
+\end{equation}
+
+In the two-dimensional case, dyneins and kinesins would still be walking along the microtubule, such that only the expressions for the myosins would change. Myosin forces are involved in the calculation of $C_k(n_{m+}, n_k)$ and $C_d(n_{m-},n_d)$, but if we examine the formulas, we see that $n_{m\pm}f_{Sm\pm}$ are simply cumulative forces created by plus- and minus-end myosin motors. Thus, we can easily substitute these terms for $\sum_{i}\hat{f}^i_{Sm\pm}$, where $\hat{f}^i_{Sm\pm}$ is a projection of the stall force of a myosin motor $i$ on the direction of the microtubule. Similarly, expressions for myosin forces are computed individually for each motor with $f_{Sm\pm}$ being substituted by the projection $\hat{f}^i_{Sm\pm}$.
+
+To avoid division by zero, in simulations we assume that there are always one dynein and one kinesin bound to the endosome outside of the fusion pore because the endosome had to be transported inside the cell to initiate fusion pore formation. Due to the architecture of the Tug-of-War model and since all the microtubular motors can only generate forces along the microtubule, adding more endosomal motors would simply offset the optimal amount of dynein motors required for efficient breakage. All other motors are bound to the capsid from the very start of the simulation.
+
+For simplicity, here we disregard tug-of-war between myosins in the direction perpendicular to the microtubule. However, this interaction can be computed and included into simulations similarly, by using the results of \cite{gennerich2007force, muller2008tug, norstrom2010unconventional} for two motors:
+
+\begin{equation}
+\tilde{f}_C(n_{m+}, n_{m-}) = n_{m+}f_{Sm+}\tilde{\lambda}(n_{m+}, n_{m-}) + n_{m-}f_{Sm+}(1 - \tilde{\lambda}(n_{m+}, n_{m-}))
+\end{equation}
+
+where
+
+\begin{equation}
+\tilde{\lambda}(n_{m+}, n_{m-}) = \frac{1}{1+\frac{n_{m+}f_{Sm+}v_{0m-}}{n_{m-}f_{Sm-}v_{0m+}}}
+\end{equation}
+ 
+Like before, we substitute $n_{m\pm}f_{Sm\pm}$ for $\sum_{i}\tilde{f}^i_{Sm\pm}$, where $\tilde{f}^i_{Sm\pm}$ are projections of the stall force of motor i in the direction perpendicular to the microtubule. Knowing $\tilde{f}_C(n_{m+}, n_{m-})$, we can compute the motor forces as:
+
+\begin{equation}
+\tilde{f}_{m+} = \frac{\tilde{f}_C(n_{m+}, n_{m-})}{n_{m+}}
+\end{equation}
+
+\begin{equation}
+\tilde{f}_{m-} = \frac{\tilde{f}_C(n_{m+}, n_{m-})}{n_{m-}}
+\end{equation}
