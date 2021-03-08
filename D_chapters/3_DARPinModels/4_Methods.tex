@@ -1,3 +1,54 @@
 \section{Methods}
 
-To simulate the inhibition of HDAC6-mediated uncoating by DARPin-F10 we created two 
+We created two new HDAC6 complex formation models including DARPin-F10 as a competitor against Ub for HDAC6-Znf binding. These models are based on previously described "Symmetric" and "Asymmetric" model variants. Detailed model equations are described in Appendix \ref{appendix:DARPinModelsEquations}.
+
+To compare original and modified HDAC6 complex formation models we uniformly sampled the rates and concentrations, as was previously described (Chapter \ref{ch:ReactionModels}) for original "Symmetric" and "Asymmetric" (Figure \ref{figure:darpinDensities}). We used two different predetermined concentrations of DARPin-F10. Based on \cite{guillard2017structural}, who report half maximal inhibitory concentration ($IC_{50}$) for DARPin-K27 and DARPin-K55 in range between 2.4 to 67 nM in their experiments, we chose $34.7$ nM as an estimate for an active concentration of DARPin-F10, and  $34.7 \cdot 10^{-6}$ nM as a negligible DARPin concentration case. For on-rate of HDAC6 and DARPin-F10 binding $k_{HF}$ we chose $10^{6} \frac{1}{s\cdot M}$ - average rate of bimolecular reaction \cite{bionumbersbimolrate}. For dissociation constant $K_{HF}$ we used $90$ nM \cite{DarpinData}.
+
+To determine the impact of DARPin-F10 concentration on uncoating we fixed all the other concentrations and rates, sampled widely in the range of $\pm$ 5 orders of magnitude around of chosen literature value. We fitted both trajectories as a Hill equation using R package \texttt{drc}:
+
+\begin{equation}
+\epsilon=\frac{\epsilon_{max} - \epsilon_{min}}{1 + \big(\frac{[F]}{EC_{50}}\big)^n}
+\end{equation}
+
+where $\epsilon_{max}$ and $\epsilon_{min}$ are maximal and minimal drug efficacy, respectively, $[F]$ is DARPin F10 concentration, $EC_{50}$ is half maximal effective concentration of DARPin F10, and $n$ is a Hill coefficient.
+
+To compute DARPin concentration $[F]_{effective}$ corresponding to experimentally observed uncoating (Figure \ref{figure:darpinUncoatingExperimental}) and viral growth (Figure \ref{figure:darpinGrowthExperimental}) reduction, we used the following formula:
+
+\begin{equation}
+[F]_{effective} = \exp\big( \frac{1}{n}\cdot\log( \frac{\epsilon_{max}-\epsilon_{min}}{\epsilon_{max}\cdot\omega - \epsilon_{min}} - 1 ) +\log(EC_{50}) \big)
+\label{eq:darpinEffectiveConcentration}
+\end{equation}
+
+where $\omega = \text{avg}(\frac{x_{DARPin}(t)}{x_{WT}(t)})$ is an observed fraction of efficiency for observations $x$ at time points $t$.
+
+Using the data \cite{DarpinData} provided by our collaborators we determined that for uncoating experiment (Figure \ref{figure:darpinUncoatingExperimental}) at MOI = 30 PFU/ml corresponding efficiency of uncoating, compared to the wild type (WT) has been at approximately $\omega$ = 73\%. By comparing the averages of viral growth in presence of DARPin-F10 (Figure \ref{figure:darpinGrowthExperimental}) at MOI = 0.05 and 10 PFU/ml for data points >12 and $\ge$8 hours respectively, we determined that DARPin-F10 presence reduced viral growth respectively to $\omega$ = 31\% and $\omega$ = 11\% of WT. Using these values and Equation \ref{eq:darpinEffectiveConcentration} we can obtain estimates for DARPin-F10 effective concentration (Table \ref{table:DARPinFittingCoefficients}).
+
+\begin{table}[h!]
+\centering
+\caption[Fitted Hill equation parameters and effective DARPin-F10 concentrations]{Fitted Hill equation parameters and effective DARPin-F10 concentrations based on sampling HDAC6 complex formation models.}
+\label{table:DARPinFittingCoefficients}
+
+\begin{tabular}{p{5cm} p{3cm} p{3cm}}
+\hline 
+\textbf{Parameter} & \textbf{Asymmetric DARPin} & \textbf{Symmetric DARPin}\\
+\hline
+$n$ &                 1.37&    1.48\\
+$\epsilon_{min}$ &    0.03&    -0.01\\
+$\epsilon_{max}$ &    0.78&    0.65\\
+$EC_{50}$, relative &          31.54&    49.85\\
+$EC_{50}$, $\mu$M &          1.1&    1.7\\
+\hline
+\multicolumn{3}{l}{$\omega$ = 73\%, uncoating assay}\\
+$[F]_{effective}$, relative & 15.82 & 25.08\\
+$[F]_{effective}$, $\mu$M & 0.5 & 0.9\\
+\hline
+\multicolumn{3}{l}{$\omega$ = 31\%, viral growth curves, MOI=0.05 PFU/ml}\\
+$[F]_{effective}$, relative & 62.69 & 83.52\\
+$[F]_{effective}$, $\mu$M & 2.2 & 2.9\\
+\hline
+\multicolumn{3}{l}{$\omega$ = 11\%, viral growth curves, MOI=10 PFU/ml}\\
+$[F]_{effective}$, relative & 210.24 & 194.85\\
+$[F]_{effective}$, $\mu$M & 7.3 & 6.8\\
+\hline
+\end{tabular}
+\end{table}
