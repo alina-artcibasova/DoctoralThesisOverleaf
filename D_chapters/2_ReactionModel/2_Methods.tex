@@ -4,7 +4,7 @@ To develop the reaction model variants, we assumed mass-action kinetics for all 
 
 For each set of parameters and initial conditions considered, we simulated the reaction model for 2 hours of system time using the MATLAB ODE solver odeSD (Gonnet et al., 2012), such that the protein interactions lead to a steady-state distribution of the molecular species. Then, we used the reaction model’s myosin and dynein motor complex abundances (see definitions above) at the end of the simulation to predict average capsid breakage probabilities with an interpolated version of the corresponding simulation results for the mass-spring model (Figure \ref{figure:MassSpringInterpolation}).
 
-To optimize reaction rate parameters, we initially simulated each reaction model variant 100’000 times with fixed median values of initial concentrations and reaction rate constants sampled log normally in the range of $\pm$ 5 orders of magnitude around values reported in the literature (Table S2). These simulation results were then averaged for a single viral particle, and used to compute capsid breakage probabilities using our interpolated mass-spring model results (Figure \ref{figure:MassSpringInterpolation}). The ‘Viral Ub’ variant failed to recruit enough motors to generate any capsid breakage for any combination of reaction rates. Therefore, we focused on the ‘Symmetric’ and ‘Asymmetric’ models.
+To optimize reaction rate parameters, we initially simulated each reaction model variant 100’000 times with fixed median values of initial concentrations and reaction rate constants sampled log normally in the range of $\pm$ 5 orders of magnitude around values reported in the literature (Table S2). These simulation results were then averaged for a single viral particle, and used to compute capsid breakage probabilities using our interpolated mass-spring model results (Figure \ref{figure:MassSpringInterpolation}). The "Viral Ub" variant failed to recruit enough motors to generate any capsid breakage for any combination of reaction rates. Therefore, we focused on the "Symmetric" and "Asymmetric" models.
 
 For both variants, the distribution of capsid breakages showed four modes (Figure \ref{figure:BreakageModesRatesSelection}). Many rate combinations led to zero breakage because the models failed to recruit any motors. The nextmode appeared at around 8\% breakage, where the models recruited about 1 myosin motor and 1-2 dynein motors. The next mode capped out at about 50\% breakage, with recruitment of 5-6 myosins, but very low numbers of dyneins, which corresponds to the ‘no dyneins’ case in the mass-spring model. The last mode yielded up to 80-90\% breakage; while sparsely populated, it was able to recruit about 7 myosins and 1-2 dyneins. Since we know that in the experiments capsid breakage depends on both myosins and dyneins, we chose this group for further analysis.
 
@@ -20,12 +20,14 @@ For both variants, the distribution of capsid breakages showed four modes (Figur
 Next, we introduced a cost function to evaluate points in this group. It penalizes distance of reaction parameter values from literature values as well as low capsid breakage probability:
 
 \begin{equation}
+\begin{split}
 C = \big| \log_{10} \big( \frac{\%}{\%_{max}} \big) \big| +\\
 \sum_{i} \big| \log_{10} \big( \frac{k^i}{k^i_{literature}} \big) \big| +\\
 \sum_{i} \big| \log_{10} \big( \frac{K^i}{K^i_{literature}} \big) \big|
+\end{split}
 \end{equation}
 
-where   is an on rate,   is a dissociation constant, and   is a capsid breakage probability. Because literature parameter values were of the same order of magnitude (approximately   for on rates and   for dissociation constants), we did not introduce extra weight coefficients. We selected the parameter point with minimal value of the cost function as reference point.
+where $k^i$ is an on rate, $K^i$ is a dissociation constant, and $\%$ is a capsid breakage probability. Because literature parameter values were of the same order of magnitude (approximately $10^6$ for on rates and $10^{-6}$ for dissociation constants), we did not introduce extra weight coefficients. We selected the parameter point with minimal value of the cost function as reference point.
 
 To compare the performance of ‘Symmetric’ and ‘Asymmetric’ model variants (Figure 4B, S3B, C, D), we sampled the concentrations (20’000 times), reaction rates (20’000 times), and both together (40’000 times). Concentrations were sampled uniformly between 50\% and 150\%, and log-normally in $\pm$1 orders of magnitude of the value reported in proteomics experiments (proteomicsDB; (Schmidt et al., 2018)). Reaction rates were sampled log-uniformly around the reference value in $\pm$1 orders of magnitude, or log-normally around the reference value with a SD of 0.1.
 

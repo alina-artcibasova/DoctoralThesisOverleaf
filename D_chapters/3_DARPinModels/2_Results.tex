@@ -52,7 +52,7 @@ Observed delay times were calculated based on an asymptotic regression function,
 \label{eq:delayMOI}
 \end{equation}
 
-where $a$ = is the delay for MOI = 1, and $b$ = is the slope coefficient. It's worth to note, that MOI=1 has a special meaning corresponding to number of viral particles being equal to the number of target cells, and it makes a lot of sense that it would be one of characteristic points of the relationship.
+where $a$ = 9.83 is the delay for MOI = 1, and $b$ = 1.47 is the slope coefficient. It's worth to note, that MOI=1 has a special meaning corresponding to number of viral particles being equal to the number of target cells, and it makes a lot of sense that it would be one of characteristic points of the relationship.
 
 The relationship in Equation \ref{eq:delayMOI} would break down at the very high values of MOI, both due to mathematical limitation - at $\tau$ turning negative, and biological considerations - no matter how much virus we add to the system, there will always be lag time due to the time it takes the virus to be internalized and uncoated by the cell. But for practical purposes, such high MOI values are used in experiments relatively rarely, and even MOI = 73 is a bit of an extreme.
 
@@ -79,7 +79,7 @@ Unfortunately, these discrepancies in experimental data do not allow us to make 
 
 \subsection{Influenza infection model selection}
 
-To model influenza virus infection, we prepared 2 chronic and 7 depletion infection models, which we named after the states and parameters they include, as described in the Methods section. We fitted these models (Table \ref{table:ModelObjFunction}) using literature data \cite{rudiger2019multiscale, frensing2016influenza} for 3 values of MOI. Judging by the objective function values, as well as visual evaluation of the fits (Appendix \ref{appendix:compartmentalModelFits}), models with target cell population described by a fitted Hill equation, performed the best, reaching objective function values about an order of magnitude lower than the next candidates (Table \ref{table:ModelObjFunction}). In the following analysis we only focus on these three models.
+To model influenza virus infection, we prepared 2 chronic and 7 depletion infection models, which we named after the states and parameters they include (Appendix \ref{appendix:compartmentalModelEquations}). We fitted these models (Table \ref{table:ModelObjFunction}) using literature data \cite{rudiger2019multiscale, frensing2016influenza} for 3 values of MOI. Judging by the objective function values, as well as visual evaluation of the fits (Appendix \ref{appendix:compartmentalModelFits}), models with target cell population described by a fitted Hill equation, performed the best, reaching objective function values about an order of magnitude lower than the next candidates (Table \ref{table:ModelObjFunction}). In the following analysis we only focus on these three models.
 
 Despite the objective function scores, visual evaluation of the fits (Appendix \ref{appendix:compartmentalModelFits}, only target cell population described by a fitted Hill equation fits reported) reveals that T$_{Hill}$IRVV$_i$ doesn't capture the initial delay in the viral production, and all 3 models struggle to capture infectious fraction, which in all models is set to be constant (which we know is not the cas, as shown on Figure \ref{figure:infectiousFraction}). T$_{Hill}$IRVV$_i$, delay $\tau = f(\text{MOI})$ model predicts an extra viral production bump for low MOI = $10^{-4}$. T$_{Hill}$IRVV$_i$, delay $\tau = const$ suggests one as well, but early in the infection, before the literature reported data points.
 
@@ -122,7 +122,7 @@ Surprisingly, amantadine-like model (Figures \ref{figure:amantadineLikeF15}, \re
 
 Neurminidase inhibitor-like models (Figures \ref{figure:neuraminidaseInhibitorLikeF15}, \ref{figure:neuraminidaseInhibitorLikeF210}, \ref{figure:neuraminidaseInhibitorLikeF62}) were able to capture the reduction in viral production far more successfully, particularly for $[F]_{effective}$ = 62.69 = 2.2 $\mu$M, determined from viral growth curves at MOI = 0.05 PFU/ml (Figure \ref{figure:neuraminidaseInhibitorLikeF62}).
 
-It's worth noting that both model variants didn't manage to simulate the reduction in viral production observed in the experiment, which may be explained by our assumption of constant infectious fraction throughout the experiment.
+It's worth noting that both model variants didn't manage to capture the gradual decrease in viral production observed in the experiment. As previously discussed, infectious fraction decreases over time during the experiment (Figure \ref{figure:infectiousFraction}), possibly due to accumulation of DIPs, while in our simulations we assume infectius fraction to stay constant.
 
 \begin{figure}
 \begin{center}
