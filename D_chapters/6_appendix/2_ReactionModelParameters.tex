@@ -1,0 +1,159 @@
+\section{Parameters for reaction models}
+\label{appendix:reactionModelsParameters}
+
+\begin{landscape}
+\begin{table}[h!]
+\caption{HDAC6 complex formation model parameters}
+\end{table}
+
+\begin{longtable}{lrlrr}
+\toprule
+\multicolumn{1}{c}{\textbf{Parameter}}
+&\multicolumn{1}{c}{\textbf{literature}}
+&\multicolumn{1}{c}{\textbf{source}}
+&\multicolumn{1}{c}{\textbf{Asymmetric}}
+&\multicolumn{1}{c}{\textbf{Symmetric}}\\
+\midrule
+\endhead % all the lines above this will be repeated on every page
+
+$[C]_0$ &
+160 &
+\makecell[l]{flu multiplicity of\\infection (MOI) \cite{anderson2010quantification, heldt2012modeling}}&
+160 &
+160\\
+
+$[CU]_0$ &
+160 &
+\makecell[l]{M1 \cite{hilsch2014influenza} and\\fusion pore \cite{lee2010architecture} size estimate} &
+\NA &
+\NA \\
+
+\midrule
+$[H]_0$ &
+$2.49 \cdot 10^{4}$ &
+\makecell[l]{Proteomics DB abundances for\\human lung \cite{proteomicsdb_hdac6}} &
+$2.49 \cdot 10^{4}$ &
+$2.49 \cdot 10^{4}$ \\
+
+$[U]_0$ &
+$7.91 \cdot 10^{54}$ &
+\makecell[l]{adjusted Proteomics DB\\abundances for human lung \cite{proteomicsdb_rps27a}\\(polymeric \cite{dammer2011polyubiquitin}, quadruplex, K48 \cite{dammer2011polyubiquitin})} &
+$7.91 \cdot 10^{54}$ &
+$7.91 \cdot 10^{54}$ \\
+
+$[M]_0$ &
+$6.93 \cdot 10^{5}$ &
+\makecell[l]{adjusted Proteomics DB\\abundances for human lung \cite{proteomicsdb_myh10}\\ (double dimer motor complex \cite{vicente2009non})} &
+$6.93 \cdot 10^{5}$ &
+$6.93 \cdot 10^{5}$\\
+
+$[A]_0$ &
+$1.91 \cdot 10^{6}$ &
+\makecell[l]{adjusted Proteomics DB\\abundances for human lung \cite{proteomicsdb_actb}\\(polymerized actin \cite{amann2000cellular})} &
+$1.91 \cdot 10^{6}$ &
+$1.91 \cdot 10^{6}$\\
+
+$[D]_0$ &
+$3.10 \cdot 10^{3}$ &
+\makecell[l]{adjusted Proteomics DB\\abundances for human lung  \cite{proteomicsdb_dync1li2}\\(motor is dimeric, only small \\ fraction of total motors\\ is in active form \cite{zhang2017cryo})} &
+$3.10 \cdot 10^{3}$ &
+$3.10 \cdot 10^{3}$\\
+
+$[T]_0$ &
+$1.26 \cdot 10^{7}$ &
+\makecell[l]{adjusted Proteomics DB\\abundances for human lung \cite{proteomicsdb_tubb}\\ (polymeric \cite{poruchynsky2008proteasome})} &
+$1.26 \cdot 10^{7}$ &
+$1.26 \cdot 10^{7}$\\
+
+\midrule
+
+$k_{CH}$&
+$10^{6} \frac{1}{\text{s} \cdot \text{M}}$ &
+\makecell[l]{average rate of\\bimolecular reaction \cite{bionumbersbimolrate}} &
+$9.34 \cdot 10^{8} \frac{1}{\text{s} \cdot \text{M}}$ &
+$6.96 \cdot 10^{5} \frac{1}{\text{s} \cdot \text{M}}$\\
+
+$k_{UH}$ &
+$10^{6} \frac{1}{\text{s} \cdot \text{M}}$&
+\makecell[l]{average rate of\\bimolecular reaction \cite{bionumbersbimolrate}}&
+$6.96 \cdot 10^{5} \frac{1}{\text{s} \cdot \text{M}}$ &
+$5.20 \cdot 10^{7} \frac{1}{\text{s} \cdot \text{M}}$\\
+
+$k_{UM}$ &
+$10^{6} \frac{1}{\text{s} \cdot \text{M}}$ &
+\makecell[l]{average rate of\\bimolecular reaction \cite{bionumbersbimolrate}} &
+$3.39 \cdot 10^{6} \frac{1}{\text{s} \cdot \text{M}}$ &
+\NA \\
+
+$k_{HM}$ &
+$10^{6} \frac{1}{\text{s} \cdot \text{M}}$ &
+\makecell[l]{average rate of\\bimolecular reaction \cite{bionumbersbimolrate}} &
+\NA &
+$2.66 \cdot 10^{6} \frac{1}{\text{s} \cdot \text{M}}$\\
+
+$k_{MA}$ &
+$0.46 \cdot 10^{6} \frac{1}{\text{s} \cdot \text{M}}$ &
+\makecell[l]{\textit{Dictyostelium discoideum}\\myosin-2 MD \cite{takacs2011myosin}} &
+$5.76 \cdot 10^{5} \frac{1}{\text{s} \cdot \text{M}}$ &
+$6.33 \cdot 10^{2} \frac{1}{\text{s} \cdot \text{M}}$\\
+
+$k_{HD}$ &
+$10^{6} \frac{1}{\text{s} \cdot \text{M}}$ &
+\makecell[l]{average rate of\\bimolecular reaction \cite{bionumbersbimolrate}} &
+$7.20 \cdot 10^{6} \frac{1}{\text{s} \cdot \text{M}}$ &
+$1.69 \cdot 10^{5} \frac{1}{\text{s} \cdot \text{M}}$\\
+
+$k_{DT}$ &
+$2.75 \cdot 10^{7} \frac{1}{\text{s} \cdot \text{M}}$ &
+\makecell[l]{kinesin rate \cite{grant2011electrostatically}, because\\dynein and kinesin \\share an overlapping\\ microtubule-binding site \cite{mizuno2004dynein}} &
+$4.88 \cdot 10^{5} \frac{1}{\text{s} \cdot \text{M}}$ &
+$8.95 \cdot 10^{5} \frac{1}{\text{s} \cdot \text{M}}$\\
+
+\midrule
+$K_{CH}$ &
+\makecell[r]{$1/K_{CH}=$ \\ $2.1 \cdot 10^{6} \frac{1}{\text{M}}$} &
+\makecell[l]{association constant for HDAC8\\tightest binding site \cite{singh2015mechanism}} &
+$2.14 \cdot 10^{-9} \text{M}$ &
+$8.44 \cdot 10^{-10} \text{M}$ \\
+
+$K_{UH}$ &
+$15.9 \cdot 10^{-6} \text{M}$ &
+\makecell[l]{Ub binding through\\zinc-finger domain \cite{hard2010hdac6}} &
+$5.50 \cdot 10^{-8} \text{M}$ &
+$1.79 \cdot 10^{-7} \text{M}$\\
+
+$K_{UM}$ &
+$20.1 \cdot 10^{-6} \text{M}$ &
+\makecell[l]{myosin-6 and K48-Ub binding \cite{he2016myosin}} &
+$2.67 \cdot 10^{-8} \text{M}$ &
+\NA \\
+
+$K_{HM}$ &
+$0.5 \cdot 10^{-6} \frac{1}{\text{s}}$ &
+\makecell[l]{dissociation constant\\for Myosin VI\cite{yu2009myosin}} &
+\NA &
+$9.29 \cdot 10^{-8} \text{M}$ \\
+
+$K_{MA}$ &
+\makecell[r]{$k_{-MA}=$ \\$0.34 \frac{1}{\text{s}}$} &
+\textit{Dictyostelium discoideum} myosin-2 MD  \cite{takacs2011myosin}&
+$1.66 \cdot 10^{-9} \text{M}$ &
+$7.76 \cdot 10^{-7} \text{M}$ \\
+
+$K_{HD}$ &
+$10^{-6} \text{M}$ &
+\makecell[l]{same order as myosin binding \cite{yu2009myosin}} &
+$3.80 \cdot 10^{-11} \text{M}$ &
+$2.58 \cdot 10^{-10} \text{M}$ \\
+
+$K_{DT}$ &
+\makecell[r]{$k_{-DT}=$ \\$0.66 \frac{1}{\text{s}}$} &
+\makecell[l]{same order as kinesin \cite{hancock1999kinesin}} &
+$1.02 \cdot 10^{-7} \text{M}$ &
+$3.23 \cdot 10^{-7} \text{M}$ \\
+
+\bottomrule
+\end{longtable}
+%\end{table}
+
+\end{landscape}

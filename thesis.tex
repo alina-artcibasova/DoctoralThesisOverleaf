@@ -20,6 +20,15 @@
 \usepackage{setspace} % onehalfspacing line spacing command
 \usepackage{float} % to foce figure position
 
+\usepackage{lscape} % landscape environment
+\usepackage{booktabs} %tables
+\usepackage{tabularx} %tables with line breaks
+\newcommand{\NA}{---} %own command
+\usepackage[labelfont=bf,textfont=md]{caption} %custom table captions
+\captionsetup[table]{skip=0pt,singlelinecheck=off}
+\usepackage{makecell}%breaks in table cells
+\usepackage{longtable}
+
 % Bibliography
 \addbibresource[label=ownpubs]{ownpubs.bib}
 \addbibresource{bibliography.bib}
