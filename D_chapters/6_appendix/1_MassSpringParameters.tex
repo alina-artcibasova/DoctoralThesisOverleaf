@@ -1,0 +1,61 @@
+\section{Mass-spring model parameters}
+\label{appendix:MassSpringParameters}
+
+\begin{longtable}{lrl}
+\caption{Mass-spring model parameters}\\
+\label{table:MassSpringParameters}\\
+
+\toprule
+\multicolumn{1}{l}{\textbf{Parameter}}&
+\multicolumn{1}{r}{\textbf{Estimate}} &
+\multicolumn{1}{l}{\textbf{Source}}\\
+\midrule
+
+\endfirsthead
+
+\toprule
+\multicolumn{1}{l}{\textbf{Parameter}}&
+\multicolumn{1}{r}{\textbf{Estimate}} &
+\multicolumn{1}{l}{\textbf{Source}}\\
+\midrule
+\endhead % all the lines above this will be repeated on every page
+
+\multicolumn{3}{l}{\textit{geometry}}\\
+spring length & 4 nm & M1 size estimate \cite{hilsch2014influenza}\\
+microtubule diameter & 25 nm & \cite{microtubule_diameter}\\
+vRNP complex diameter & 13 nm & \cite{noda2012three}\\
+capsid nodes X &4 & \makecell[l]{M1 \cite{hilsch2014influenza} and\\fusion pore \cite{lee2010architecture}\\size estimate}\\
+capsid nodes Y &4 & \makecell[l]{M1 \cite{hilsch2014influenza} and\\fusion pore \cite{lee2010architecture}\\size estimate}\\
+lipid nodes X &1 & for simplicity\\
+lipid nodes Y &1 & for simplicity\\
+\midrule
+\multicolumn{3}{l}{\textit{Morse spring}}\\
+\\capsid stiffness $k_C$ & 0.002 N/m & \makecell[l]{\cite{li2014ph} coupled with\\equivalent spring \\constant formula\\for parallel springs\\$k_{eq} = k_1 + k_2$}\\
+lipid stiffness $k_L$ & 0.02 N/m & \cite{li2014ph}\\
+\makecell[l]{capsid dissociation\\energy $De_C$} &\makecell[r]{3–4 Kcal/mol\\$\approx$ 14 kJ} & \makecell[l]{value for hepatitis\\virus \cite{ceres2004hepatitis}}\\
+\makecell[l]{lipid dissociation\\energy $De_L$} &\makecell[r]{40–50 Kcal/mol\\$\approx$ 200 kJ} & \cite{lorizate2011role}\\
+\midrule
+\multicolumn{3}{l}{\textit{masses}}\\
+M1 mass &28 kDa & \cite{shtykova2013structural}\\
+Ub mass &8.5 kDa & \cite{goldstein1975isolation}\\
+HDAC6 mass &131 kDa & \cite{hdac6_mass}\\
+dynein mass &1.2 MDa & \cite{gao2006simple}\\
+myosin mass &229 kDa & \cite{myosin_mass}\\
+endosome mass & 144e6 kDa&\makecell[l]{endosome diameter\\0.76 $\mu$m \cite{ganley2004rab9},\\cell density\\1.04 $g/cm^3$ \cite{ooya1992gravity}}\\
+\midrule
+\multicolumn{3}{l}{\textit{motors}}\\
+\makecell[l]{number of capsid bound\\myosin motors} &0-16 & \makecell[l]{experimental\\conditions}\\
+\textbf{}number of capsid bound\\dynein motors} &0-16 & \makecell[l]{experimental\\conditions}\\
+\textbf{}number of endosome\\bound kinesin motors} &1 & for simplicity\\
+\textbf{}number of endosome\\bound dynein motors} &1 & for simplicity\\
+kinesin stall force &6 pN & \cite{muller2008tug}\\
+dynein stall force &7 pN & \cite{muller2008tug}\\
+myosin stall force &2.2 pN & \cite{norstrom2010unconventional}\\
+kinesin forward velocity &1 $\mu$m/s & \cite{muller2008tug}\\
+dynein forward velocity &0.65 $\mu$m/s & \cite{muller2008tug}\\
+myosin forward velocity &0.029 $\mu$m/s & \cite{norstrom2010unconventional}\\
+kinesin backward velocity &6 nm/s & \cite{muller2008tug}\\
+dynein backward velocity &15 nm/s & \cite{gennerich2007force}\\
+myosin backward velocity &29 nm/s & equal to forward velocity\\
+\bottomrule
+\end{longtable}
