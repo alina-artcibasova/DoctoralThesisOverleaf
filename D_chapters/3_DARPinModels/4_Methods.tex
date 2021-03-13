@@ -149,7 +149,7 @@ where $t$ is time, $b$ is a slope coefficient, and $a$ is an intercept, conditio
 
 \subsection{Influenza infection model selection}
 
-We used 2 chronic and 7 depletion influenza infection models, which are described in detail in Appendix \ref{appendix:compartmentalModelEquations}. We simulated these models for 80 hours using MATLAB solvers \texttt{ode23} (with extra condition that all the variables stay positive during the simulation) and \texttt{dde23} (for delay models).
+We used 2 chronic and 7 depletion influenza infection models, which are described in detail in Appendix \ref{appendix:compartmentalModelEquations}. We simulated these models for 80 hours of  system time using MATLAB solvers \texttt{ode23} (with extra condition that all the variables stay positive during the simulation) and \texttt{dde23} (for delay models).
 
 As initial conditions we chose that all the cell at the start of the simulation are target cells $T_0 = 6.7 \cdot 10^6$ \cite{saenz2010dynamics}, $E_0$, $I_0$, $R_0$ = 0. Number of viral particles is $V_0 = T_0 \cdot MOI$, with number of infectious viral particles being determined based on initial total virus and infectious fraction $V_i0 = V_0 \cdot i_{fraction}$ (for detailed notation see Appendix \ref{appendix:compartmentalModelEquations}).
 
