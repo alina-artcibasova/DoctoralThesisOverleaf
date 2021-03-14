@@ -8,7 +8,7 @@ In classical mechanics an object moving in fluid is affected by several forces:
     \item drag force (directed opposite the direction of movement).
 \end{itemize}
 
-Further, in fluids the Reynolds number is used to determine specific flow patterns and relevance of inertial or viscous forces. In systems with low Reynolds numbers it is sometimes possible to omit inertial forces as fluid dynamic play a much more important role \cite{purcell1977life}.
+Further, in fluids the Reynolds number is used to determine specific flow patterns and relevance of inertial or viscous forces. In systems with low Reynolds numbers it is sometimes possible to omit inertial forces as fluid dynamics play a much more important role \cite{purcell1977life}.
 
 Additionally, capsid disassembly involves forces exerted by molecular motors and restoring forces of bonds between M1.
 
@@ -26,7 +26,7 @@ where $a$ is a characteristic size of the moving object, $v$ is its velocity rel
 
 \begin{itemize}
 \item For influenza A capsid protein M1 characteristic size is $a = 4 \text{ nm} = 4 \cdot 10^{-7} \text{ cm}$ \cite{shtykova2013structural}.
-\item During simulation individual velocities of the nodes typically are in the range of $10^{-13}$-$10^{-5} \text{ m/s}$. Motor forward velocities are around $10^{-6} \text{ m/s}$ \cite{muller2008tug}. Let's assume for this calculation that $v = 10^{-6} \text{ m/s} = 10^{-4} \text{ cm/s}$.
+\item During the simulation individual velocities of the nodes typically are in the range of $10^{-13}$-$10^{-5} \text{ m/s}$. Motor forward velocities are around $10^{-6} \text{ m/s}$ \cite{muller2008tug}. Let us assume for this calculation that $v = 10^{-6} \text{ m/s} = 10^{-4} \text{ cm/s}$.
 \item Average density of the cytoplasm (based on horn cells in rats \cite{hartmann1967cytoplasmic}) is about $\rho = 0.3 \text{ pg}/\SI{}{\micro\meter}^3 = 0.3 \text{ g}/\text{cm}^3$ . Alternatively for \textit{E. coli} $\rho = 1.1 \text{ g}/\text{cm}^3$ \cite{loferer1998determination}.
 \item Relative viscosity of cytoplasm (cytoplasm versus water) determined by time-resolved microfluorimetry \cite{swaminathan1997photobleaching} is $\frac{\eta_\text{cytoplasm}}{\eta_\text{water}}$ = 1.5 and determined by photobleaching recovery of green fluorescent protein \cite{swaminathan1997photobleaching} is 3.2.
 \item Water viscosity is $\eta_\text{water} = 8.9 \cdot 10^{-3} \text{ dyn} \cdot \text{s}/\text{cm}^2 = 8.9 \cdot 10^{-3} \text{ g}/\text{cm} \cdot \text{s} $ at \SI{25}{\degreeCelsius} \cite{IAPWS2008}. So $\eta_\text{cytoplasm} = 3.2 \cdot 8.9 \cdot 10^{-3} \text{ g}/(\text{cm} \cdot \text{s}) = 28.5 \cdot 10^{-3} \text{ g}/(\text{cm} \cdot \text{s})$.
@@ -38,7 +38,7 @@ Thus, Reynolds number is
 Re = \frac{av\rho}{\eta} = \frac{4 \cdot 10^{-7} \text{ cm} \cdot 10^{-4} \text{ cm/s} \cdot 0.3 \text{ g}/\text{cm}^3}{28.5 \cdot 10^{-3} \text{ g}/(\text{cm} \cdot \text{s})} = 4.2 \cdot 10^{-10}
 \end{equation}
 
-This value is extremely small - for comparison, the Reynolds number for a bacteria moving in the medium is approximately $3\cdot 10^-5$ \cite{purcell1977life}, which means that for our system intertia forces don't play any important role, and that what happens to the proteins in question is determined by the forces exerted on them at that specific moment \cite{purcell1977life}.
+This value is extremely small - for comparison, the Reynolds number for a bacteria moving in the medium is approximately $3\cdot 10^-5$ \cite{purcell1977life}, which means that for our system intertia forces do not play any important role, and that what happens to the proteins in question is determined by the forces exerted on them at that specific moment \cite{purcell1977life}.
 
 \subsection{Weight}
 
@@ -111,7 +111,7 @@ F_{\text{Hooke}} = k_{\text{spring}}\Delta x =\\
 \end{split}
 \end{equation}
 
-In our representation of capsid disassembly instead of Hooke's law we're using Morse potential, because it explicitly includes the possibility of break:
+In our representation of capsid disassembly instead of Hooke's law we are using Morse potential, because it explicitly includes the possibility of breakage:
 
 \begin{equation}
 V(\mathbf{r}) = D_{\text{e}} \big(1 - e^{- a(\mathbf{r - r_e})}\big)^2 = D_{\text{e}} \big(1 - e^{- a \Delta \mathbf{r}}\big)^2.
@@ -155,7 +155,7 @@ F_\text{Morse} = 2aD_{\text{e}}e^{- a |\Delta \mathbf{x}|}\big(1 - e^{- a |\Delt
 \end{split}
 \end{equation}
 
-This estimate is a little high, since during our first calculation steps active spring forces are approximately $10^{-21} \text{ N}$, but reach up to $10^{-9} \text{ N}$ during the course of the calculation.
+This estimate is a little high, since during our first calculation steps active spring forces are approximately $10^{-21} \text{ N}$, but reaches up to $10^{-9} \text{ N}$ during the course of the calculation.
 
 Based on the estimates of the force values in our model we focus on spring and motor forces, because sedimentation forces acting on the proteins are negligibly small.
 

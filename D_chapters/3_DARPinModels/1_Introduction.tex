@@ -7,7 +7,7 @@ To compare our dose-response predictions with experimental DARPin-F10 viral grow
 
 Some of the newer studies describing structured and non-structured kinetic models \cite{rudiger2019multiscale, schulze2009infection} use attractive multi-dimensional datasets, which even without the use of the model may allow predictions of infection progression. Such datasets, when available, provide an intriguing opportunity to functionally characterise influenza infection, and make corresponding adjustments in our model structure. For example, it has long been established that high multiplicity of infection (MOI) tends to lead to higher synchrony of viral release \cite{cairns1957asynchrony}. Influenza kinetic models tend to implicitly build such relationships into the parameter fitting. However, when the fitting dataset only includes a small variety of initial conditions, specifically with regard to initial virus concentration, it is difficult to judge how well the model would describe any other dataset.
 
-In this chapter we give a brief summary of experimental data available for DAPin-F10 \cite{DarpinData}, provide an overview on \textit{in vitro} influenza kinetic modelling literature, model DARPin-F10 inhibition of HDAC6-Ub binding to predict active concentrations and dose-response behavior, make use of available literature data \cite{rudiger2019multiscale, schulze2009infection} to analyze functional dependencies between model parameters, and to fit a simple influenza infection model, which we then use to predict the effect of DARPin-F10 on influenza infection.
+In this chapter we give a brief summary of experimental data available for DARPin-F10 \cite{DarpinData}, provide an overview on \textit{in vitro} influenza kinetic modelling literature. We then model DARPin-F10 inhibition of HDAC6-Ub binding during influenza uncoating to predict active concentrations and dose-response behavior. We make use of available literature data \cite{rudiger2019multiscale, schulze2009infection} to analyze functional dependencies between model parameters, and to fit a simple influenza infection model, which we then use to predict the effect of DARPin-F10 on influenza infection.
 
 \subsection{DARPin-F10 inhibits HDAC6-ZnF Ub binding}
 
@@ -40,7 +40,7 @@ DARPin-F10 + dTAG: cells in which DARPin F10 was degraded through dTAG before vi
 \end{center}
 \end{figure}
 
-Our collaborators from Patrick Matthias’ group at FMI showed that DARPin-F10 has a high specificity and affinity against HDAC6-ZnF \cite{DarpinData}. They were able to stably express and reversibly DARPin F10 in A549 cells. Using these new mutant cell lines they demonstrated that MOI = 30 plaque-forming units (PFU)/ml DARPin-F10 expression leads to the reduction in influenza viral uncoating (Figure \ref{figure:darpinUncoatingExperimental}), and at MOIs of 10 and 0.05 PFU/ml - to reduction virus production (Figure \ref{figure:darpinGrowthExperimental}) by about an order of magnitude.
+Our collaborators from Patrick Matthias’ group at FMI showed that DARPin-F10 has a high specificity and affinity against HDAC6-ZnF \cite{DarpinData}. They were able to stably express and reversibly DARPin F10 in A549 cells. Using these new mutant cell lines they demonstrated that expression of DARPin-F10 for MOI = 30 plaque-forming units (PFU)/ml leads to the reduction in influenza viral uncoating (Figure \ref{figure:darpinUncoatingExperimental}), and for MOI 10 and 0.05 PFU/ml - to a reduction in virus production (Figure \ref{figure:darpinGrowthExperimental}) by about an order of magnitude.
 
 Knowing that DARPin-F10 binds to HDAC6-ZnF we can reasonably assume that during influenza uncoating it acts as a competitor against polyubiquitin chains. In this chapter, we use that assumption, and introduce DARPin-F10 to our HDAC6 complex formation models.
 
@@ -50,9 +50,9 @@ Seasonal and zoonotic influenza is a popular subject of viral modelling, which h
 
 Influenza infection dynamic models are focused primarily capturing the transmission between hosts, with the goal of informing public health decisions an assist in pandemic planning \cite{ferguson2006strategies, mcvernon2007model}.
 
-With the advancement of the social media, a new type of influenza forecasting models has emerged \cite{pawelek2014modeling, santillana2015combining, levy2018modeling}, relying on publicly available self-reporting by users.
+With the advancement of social media, a new type of influenza forecasting models has emerged \cite{pawelek2014modeling, santillana2015combining, levy2018modeling}, relying on publicly available self-reporting by users.
 
-Structured models which include individual processes in virus replication \cite{sidorenko2004structured}, endosomal escape \cite{lagache2012modeling} and defective viral particle propagation \cite{rudiger2019multiscale} have been proposed. Their phenomenological nature means that they often rely on unobserved quantities and variables, and don't allow for inference on specific molecular targets for intervention.
+Structured models which include individual processes in virus replication \cite{sidorenko2004structured}, endosomal escape \cite{lagache2012modeling} and defective viral particle propagation \cite{rudiger2019multiscale} have been proposed. Their phenomenological nature means that they often rely on unobserved quantities and variables, and do not allow for inference on specific molecular targets for intervention.
 
 Non-structured influenza kinetic models aim to understand and quantify severity, duration, and overall progression of the infection within a host or a cell culture. \textit{In vitro} models rely on directly observed experimental quantities for parameter fitting. They usually have a simple and understandable structure. However this simplicity makes inference and analysis of specific molecular targets largely impossible. \textit{In vivo} kinetic models build up on that basic structure and attempt to incorporate innate \cite{beauchemin2008modeling, handel2010towards,miao2010quantifying} and adaptive \cite{belz2002compromised, handel2010towards, miao2010quantifying} immune response. Here we primarily focus on \textit{in vitro} models, as our DARPin-F10 experimental data is coming from cell culture experiments.
 
@@ -68,7 +68,7 @@ Chronic infection kinetic model, originally proposed for human immunodeficiency 
 
 where $s$ is target cells regeneration, $d$ is natural target cells death, $\beta$ is target cells infection rate by viral particles, $\delta$ is death rate of infected cells, $p$ is viral particle production rate by infected cells, and $c$ is clearance rate of viral particles.
 
-It's often assumed that during acute ($s = d = 0$ \cite{baccam2006kinetics}) influenza infection target cells $T$ are limited and are depleted over the course of the infection:
+It is often assumed that during acute ($s = d = 0$ \cite{baccam2006kinetics}) influenza infection target cells $T$ are limited and are depleted over the course of the infection:
 
 \begin{equation}
 \begin{array}{rcl}
@@ -91,7 +91,7 @@ Another commonly made assumption is that during influenza infection viral produc
 
 where $k$ is a rate of $I_1$ maturation into $I_2$.
 
-Alternative approach to modeling this latency is through use of a system of delay differential equations (DDE), by introducing a fixed delay $\tau$:
+An alternative approach to modeling this latency is through the use of a system of delay differential equations (DDE), by introducing a fixed delay $\tau$:
 
 \begin{equation}
 \begin{array}{rcl}
@@ -101,11 +101,11 @@ Alternative approach to modeling this latency is through use of a system of dela
 \end{array}
 \end{equation}
 
-Here, during the "eclipse phase" the infected cell does not contribute to systems dynamics. Fixed delay model disregards variability of transition time from eclipse phase, but allows to avoid unrealistically small or large transition times from eclipse to productive phase \cite{beauchemin2008modeling}.
+Here, during the "eclipse phase" the infected cell does not contribute to systems dynamics. A fixed delay model disregards variability of transition time from eclipse phase, but allows to avoid unrealistically small or large transition times from the eclipse to productive phase \cite{beauchemin2008modeling}.
 
-\cite{mohler2005mathematical,schulze2009infection} model viral production on microcarriers and introduce delay in viral production term $p I(t - \tau)$ instead.
+Models of viral production on microcarriers \cite{mohler2005mathematical,schulze2009infection} introduce a delay in viral production term $p I(t - \tau)$ instead.
 
-Several models have been suggested to describe influenza infection in presence of antiviral drugs. Amantadine drugs are commonly modelled as follows:
+Several models have been suggested to describe influenza infection in presence of antiviral drugs. Amantadine drugs are commonly modelled as follows \cite{beauchemin2008modeling}:
 
 \begin{equation}
 \begin{array}{rcl}
@@ -115,7 +115,7 @@ Several models have been suggested to describe influenza infection in presence o
 \end{array}
 \end{equation}
 
-where $\epsilon_{drug}$ is a drug efficacy, determined through dose-response $E_{max}$ model:
+where $\epsilon_{drug}$ is a drug efficacy, determined through a dose-response $E_{max}$ model:
 
 \begin{equation}
 \epsilon_{drug} = \epsilon_{max}\frac{1}{1 + (\frac{[D]}{IC_{50}})^{-n}}
@@ -123,7 +123,7 @@ where $\epsilon_{drug}$ is a drug efficacy, determined through dose-response $E_
 
 where $\epsilon_{max}$ is a maximal drug effect such that $0 < \epsilon_{max} \le 1$, and $n \ge 0$ is a Hill coefficient.
 
-\cite{beauchemin2008modeling} also examine the possibility that amantadine lengthens eclipse phase instead of inhibiting the infection:
+In an alternative formulation, amantadine lengthens the eclipse phase instead of inhibiting the infection \cite{beauchemin2008modeling}:
 
 \begin{equation}
 \begin{array}{rcl}
