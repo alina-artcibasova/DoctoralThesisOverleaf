@@ -1,16 +1,18 @@
 \section{Effective forces on nanomolecular scales}
 \label{appendix:nanomolecular}
 
-In classical mechanics an object moving in fluid is affected by forces: weight (directed down), buoyant force (directed up), drag force (directed opposite the direction of movement). During capsid disassembly there are also forces exerted by molecular motors and restoring forces of bonds between M1.
+In classical mechanics an object moving in fluid is affected by several forces:
+\begin{itemize}
+    \item weight (directed down),
+    \item buoyant force (directed up),
+    \item drag force (directed opposite the direction of movement).
+\end{itemize}
 
-\begin{center}
-\includegraphics[width=0.5\textwidth]{D_chapters/6_appendix/Sedimentation.PNG}
-\captionof{figure}{Forces affecting object during sedimentation in fluid.}
-\end{center}
+Further, in fluids the Reynolds number is used to determine specific flow patterns and relevance of inertial or viscous forces. In systems with low Reynolds numbers it is sometimes possible to omit inertial forces as fluid dynamic play a much more important role \cite{purcell1977life}.
 
-The Reynolds number is the ratio of inertial forces to viscous forces within a fluid which is subjected to relative internal movement due to different fluid velocities. In systems with low Reynolds numbers it's sometimes possible to omit inertial forces as fluid dynamic play a much more important role \cite{purcell1977life}.
+Additionally, capsid disassembly involves forces exerted by molecular motors and restoring forces of bonds between M1.
 
-Let's estimate sedimentation forces and mechanical forces involved in capsid disassembly, to determine their relevancy to mathematical modelling.
+Here we estimate sedimentation forces and mechanical forces involved in capsid disassembly, to determine their relevancy to biophysical model.
 
 \subsection{Reynolds number}
 
@@ -22,34 +24,13 @@ Re = \frac{\text{inertial forces}}{\text{viscous forces}} =\frac{av\rho}{\eta} =
 
 where $a$ is a characteristic size of the moving object, $v$ is its velocity relative to fluid, $\rho$ is fluid density, $\eta$ is fluid viscosity and $\nu$ is kinematic viscosity.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.5\textwidth]{D_chapters/6_appendix/Reynolds_number.PNG}
-\caption[Schematic representation of an object moving in fluid]{Schematic representation of an object of characteristic size $a$ moving with speed $v$ in fluid with density $\rho$ and viscosity $\eta$.}
-\end{center}
-\end{figure}
-
-Let's calculate Reynolds number for influenza A capsid protein M1.
-
-M1 characteristic size $a = 4 \text{ nm} = 4 \cdot 10^{-7} \text{ cm}$ \cite{shtykova2013structural}.
-
-During calculation individual velocities of the nodes typically are in the range of $10^{-13}$-$10^{-5} \text{ m/s}$. Motor forward velocities are around $10^{-6} \text{ m/s}$ \cite{muller2008tug}. Let's assume for this calculation that $v = 10^{-6} \text{ m/s} = 10^{-4} \text{ cm/s}$.
-
-Average density of the cytoplasm (horn cells in rats, only available data?) is about $\rho = 0.3 \text{ pg}/\SI{}{\micro\meter}^3 = 0.3 \text{ g}/\text{cm}^3$ \cite{hartmann1967cytoplasmic}. Alternatively (\textit{E. coli}) $\rho = 1.1 \text{ g}/\text{cm}^3$ \cite{loferer1998determination}.
-
-Relative viscosity of cytoplasm (cytoplasm versus water) determined by time-resolved microfluorimetry \cite{swaminathan1997photobleaching} is
-
-\begin{equation}
-\frac{\eta_\text{cytoplasm}}{\eta_\text{water}} = 1.5,
-\end{equation}
-
-and determined by photobleaching recovery of green fluorescent protein \cite{swaminathan1997photobleaching} is 
-
-\begin{equation}
-\frac{\eta_\text{cytoplasm}}{\eta_\text{water} }= 3.2.
-\end{equation}
-
-Water viscosity is $\eta_\text{water} = 8.9 \cdot 10^{-3} \text{ dyn} \cdot \text{s}/\text{cm}^2 = 8.9 \cdot 10^{-3} \text{ g}/\text{cm} \cdot \text{s} $ at \SI{25}{\degreeCelsius} \cite{IAPWS2008}. So $\eta_\text{cytoplasm} = 3.2 \cdot 8.9 \cdot 10^{-3} \text{ g}/(\text{cm} \cdot \text{s}) = 28.5 \cdot 10^{-3} \text{ g}/(\text{cm} \cdot \text{s})$.
+\begin{itemize}
+\item For influenza A capsid protein M1 characteristic size is $a = 4 \text{ nm} = 4 \cdot 10^{-7} \text{ cm}$ \cite{shtykova2013structural}.
+\item During simulation individual velocities of the nodes typically are in the range of $10^{-13}$-$10^{-5} \text{ m/s}$. Motor forward velocities are around $10^{-6} \text{ m/s}$ \cite{muller2008tug}. Let's assume for this calculation that $v = 10^{-6} \text{ m/s} = 10^{-4} \text{ cm/s}$.
+\item Average density of the cytoplasm (based on horn cells in rats \cite{hartmann1967cytoplasmic}) is about $\rho = 0.3 \text{ pg}/\SI{}{\micro\meter}^3 = 0.3 \text{ g}/\text{cm}^3$ . Alternatively for \textit{E. coli} $\rho = 1.1 \text{ g}/\text{cm}^3$ \cite{loferer1998determination}.
+\item Relative viscosity of cytoplasm (cytoplasm versus water) determined by time-resolved microfluorimetry \cite{swaminathan1997photobleaching} is $\frac{\eta_\text{cytoplasm}}{\eta_\text{water}}$ = 1.5 and determined by photobleaching recovery of green fluorescent protein \cite{swaminathan1997photobleaching} is 3.2.
+\item Water viscosity is $\eta_\text{water} = 8.9 \cdot 10^{-3} \text{ dyn} \cdot \text{s}/\text{cm}^2 = 8.9 \cdot 10^{-3} \text{ g}/\text{cm} \cdot \text{s} $ at \SI{25}{\degreeCelsius} \cite{IAPWS2008}. So $\eta_\text{cytoplasm} = 3.2 \cdot 8.9 \cdot 10^{-3} \text{ g}/(\text{cm} \cdot \text{s}) = 28.5 \cdot 10^{-3} \text{ g}/(\text{cm} \cdot \text{s})$.
+\end{itemize}
 
 Thus, Reynolds number is
 
@@ -57,15 +38,9 @@ Thus, Reynolds number is
 Re = \frac{av\rho}{\eta} = \frac{4 \cdot 10^{-7} \text{ cm} \cdot 10^{-4} \text{ cm/s} \cdot 0.3 \text{ g}/\text{cm}^3}{28.5 \cdot 10^{-3} \text{ g}/(\text{cm} \cdot \text{s})} = 4.2 \cdot 10^{-10}
 \end{equation}
 
-This value is extremely small - for comparison, the Reynolds number for a bacteria moving in the medium is (?)
+This value is extremely small - for comparison, the Reynolds number for a bacteria moving in the medium is approximately $3\cdot 10^-5$ \cite{purcell1977life}, which means that for our system intertia forces don't play any important role, and that what happens to the proteins in question is determined by the forces exerted on them at that specific moment \cite{purcell1977life}.
 
 \subsection{Weight}
-
-\begin{equation}
-F_{\text{weight}} = mg,
-\end{equation}
-
-where $m$ is object mass and $g$ is gravitational acceleration.
 
 The mass of M1 capsid protein is $m_{\text{M1}} = 28 \text{ kDa} = 28 \cdot 1000 \cdot 1.66 \cdot 10^{-27} \text{ kg} = 46.5 \cdot 10^{-24} \text{ kg}$. \cite{shtykova2013structural}
 
@@ -75,19 +50,15 @@ Then the force is
 F_{\text{weight}} = m_{M1}g = 46.5 \cdot 10^{-24} \text{ kg} \cdot 9.8 \text{ m}/\text{s}^2 = 4.6 \cdot 10^{-22} \text{ N}
 \end{equation}
 
+where $g$ is gravitational acceleration.
+
 \subsection{Buoyant force}
 
 \begin{equation}
 F_{\text{buoyant}} = \rho_FVg,
 \end{equation}
 
-where $\rho_F$ is density of the fluid, $V$ is the volume of the object and $g$ is gravitational acceleration.
-
-Density of cytoplasm as previously established is $\rho = 0.3 \text{ g}/\text{cm}^3 = 3000 \text{ kg}/\text{m}^3$ \cite{hartmann1967cytoplasmic}
-
-Dimensions of M1 protein are approximately $4.0 \times 4.0 \times 6.0 \text{ nm}$ \cite{shtykova2013structural}, so $V_{M1} = 96 \text{ nm}^3 = 9.6 \cdot 10^{-26} \text{ m}^3$
-
-Then the force is
+where $\rho_F$ is density of the fluid, $V$ is the volume of the object and $g$ is gravitational acceleration. Using previously established values for characteristic size of M1 and density of cytoplasm we obtain the value for the force
 
 \begin{equation}
 \begin{split}
@@ -105,15 +76,7 @@ Drag force exerted on spherical objects with very small Reynolds numbers (i.e. v
 F_{\text{drag}} = 6\pi\eta av,
 \end{equation}
 
-where $\eta$ is dynamic fluid viscosity, $a$ is the radius of the spherical object, $v$ is the flow velocity relative to the object.
-
-As previously shown $\eta_{\text{cytoplasm}} = 28.5 \cdot 10^{-3} \text{ g}/(\text{cm} \cdot \text{s}) = 2.85 \cdot 10^{-4} \text{ kg}/(\text{m} \cdot \text{s})$ \cite{swaminathan1997photobleaching, IAPWS2008}.
-
-M1 characteristic size $a = 4 \text{ nm} = 4 \cdot 10^{-9} \text{ m}$ \cite{shtykova2013structural}.
-
-And velocities are in range $v = 10^{-6} \text{ m/s}$ \cite{muller2008tug}.
-
-Then the force is
+where $\eta$ is dynamic fluid viscosity, $a$ is the radius of the spherical object, $v$ is the flow velocity relative to the object. Using previously established values
 
 \begin{equation}
 \begin{split}
@@ -122,11 +85,6 @@ F_{\text{drag}} = 6\pi\eta_{\text{cytoplasm}} av = \\
 2.1 \cdot 10^{-17} \text{ N}.
 \end{split}
 \end{equation}
-
-\begin{center}
-\includegraphics[width=0.5\textwidth]{D_chapters/6_appendix/Capsid.jpg}
-\captionof{figure}{Forces affecting M1 capsid protein during capsid disassembly.}
-\end{center}
 
 \subsection{Motor forces}
 
@@ -197,9 +155,7 @@ F_\text{Morse} = 2aD_{\text{e}}e^{- a |\Delta \mathbf{x}|}\big(1 - e^{- a |\Delt
 \end{split}
 \end{equation}
 
-On first calculation steps these forces are about $10^{-21} \text{ N}$ but reach up to $10^{-9} \text{ N}$ during the course of the calculation.
+This estimate is a little high, since during our first calculation steps active spring forces are approximately $10^{-21} \text{ N}$, but reach up to $10^{-9} \text{ N}$ during the course of the calculation.
 
-\subsection{Conclusion}
-
-In our model we can only focus on spring and motor forces as sedimentation forces acting on the proteins are negligibly small.
+Based on the estimates of the force values in our model we focus on spring and motor forces, because sedimentation forces acting on the proteins are negligibly small.
 

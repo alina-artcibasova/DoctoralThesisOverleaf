@@ -1,7 +1,7 @@
 \section{Derivation of two dimensional Tug-of-War equations}
 \label{appendix:2DTugOfWar}
 
-First, let us examine the one-dimensional case, where all the motors walk along the microtubule. Analogously to the two-motor scenario  \cite{gennerich2007force, muller2008tug, norstrom2010unconventional}, we write a force balance.
+First, let us examine the one-dimensional case, where all the motors walk along the microtubule. Analogously to the two-motor scenario \cite{gennerich2007force, muller2008tug, norstrom2010unconventional}, we write a force balance.
 
 \begin{equation}
 n_kf_k + n_{m+}f_{m+} = -n_df_d - n_{m-}f_{m-} = f_C(n_k, n_d, n_{m+}, n_{m-})
@@ -192,8 +192,6 @@ f_{m-} =  \frac{f_{Sm-}f_d}{f_{Sd}}
 \end{equation}
 
 In the two-dimensional case, dyneins and kinesins would still be walking along the microtubule, such that only the expressions for the myosins would change. Myosin forces are involved in the calculation of $C_k(n_{m+}, n_k)$ and $C_d(n_{m-},n_d)$, but if we examine the formulas, we see that $n_{m\pm}f_{Sm\pm}$ are simply cumulative forces created by plus- and minus-end myosin motors. Thus, we can easily substitute these terms for $\sum_{i}\hat{f}^i_{Sm\pm}$, where $\hat{f}^i_{Sm\pm}$ is a projection of the stall force of a myosin motor $i$ on the direction of the microtubule. Similarly, expressions for myosin forces are computed individually for each motor with $f_{Sm\pm}$ being substituted by the projection $\hat{f}^i_{Sm\pm}$.
-
-To avoid division by zero, in simulations we assume that there are always one dynein and one kinesin bound to the endosome outside of the fusion pore because the endosome had to be transported inside the cell to initiate fusion pore formation. Due to the architecture of the Tug-of-War model and since all the microtubular motors can only generate forces along the microtubule, adding more endosomal motors would simply offset the optimal amount of dynein motors required for efficient breakage. All other motors are bound to the capsid from the very start of the simulation.
 
 For simplicity, here we disregard tug-of-war between myosins in the direction perpendicular to the microtubule. However, this interaction can be computed and included into simulations similarly, by using the results of \cite{gennerich2007force, muller2008tug, norstrom2010unconventional} for two motors:
 
