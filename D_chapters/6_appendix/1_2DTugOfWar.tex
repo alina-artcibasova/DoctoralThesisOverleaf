@@ -5,6 +5,7 @@ First, let us examine the one-dimensional case, where all the motors walk along 
 
 \begin{equation}
 n_kf_k + n_{m+}f_{m+} = -n_df_d - n_{m-}f_{m-} = f_C(n_k, n_d, n_{m+}, n_{m-})
+\label{eq:forceBalance}
 \end{equation}
 
 where $n_k$, $n_d$, $n_{m+}$, $n_{m-}$ are motor numbers and $f_k$, $f_d$, $f_{m+}$, $f_{m-}$ are forces of kinesin, dynein, plus- and minus-end myosin motors, respectively. The cargo force is determined by the condition that all motors move with the same velocity $v_C$ , as given by
@@ -13,23 +14,23 @@ where $n_k$, $n_d$, $n_{m+}$, $n_{m-}$ are motor numbers and $f_k$, $f_d$, $f_{m
 v_C(n_k, n_d, n_{m+}, n_{m-}) = v_k(f_k) = v_{m+}(f_{m+}) = - v_d(f_d) = - v_{m-}(f_{m-})
 \end{equation}
 
-With this definition follows for the left part of the force balance equation Eq. (0.1)
+With this definition follows for the left part of the force balance Equation \ref{eq:forceBalance}:
 
 \begin{equation}
 f_C(n_k, n_d, n_{m+}, n_{m-}) = n_kf_k + n_{m+}f_{m+} = n_kf_k\big(1 + \frac{n_{m+}f_{m+}}{n_kf_{k}}\big)
-\end{equation},
+\end{equation}
 
-which gives us an expression for the kinesin force:
+This gives us an expression for the kinesin force:
 
 \begin{equation}
 f_k = \frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_k\big(1 + \frac{n_{m+}f_{m+}}{n_kf_{k}}\big)}
-\end{equation}.
+\end{equation}
 
 Analogously, for the right part and the dynein force, we obtain:
 
 \begin{equation}
 f_d = -\frac{f_C(n_k, n_d, n_{m+}, n_{m-})}{n_d\big(1 + \frac{n_{m-}f_{m-}}{n_df_{d}}\big)}
-\end{equation}.
+\end{equation}
 
 For simplicity, we assume here that the ratio of motor forces moving in the same direction is proportionate to the ratio of their stall forces (indicated by subscript S):
 

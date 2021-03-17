@@ -32,7 +32,7 @@ where $a^{type}$ and $D^{type}$ are the parameters of the Morse spring, dependin
 We then compute the projections on the x and the y axis of the acceleration created by each of the spring forces as follows:
 
 \begin{equation}
-a^{spring}_z = \frac{f_{Morse spring}}{m_{node}} \big(\frac{-\delta z}{(\delta x)^2 + (\delta y)^2}\big)
+a^{spring}_z = \frac{f_{Morse spring}}{m_{node}} \Big(\frac{-\delta z}{(\delta x)^2 + (\delta y)^2}\Big)
 \end{equation}
 
 where $m_{node}$ is the node’s mass and $z$ stands for either $x$ or $y$.
@@ -59,28 +59,19 @@ a^{top}_y + a^{right}_y + a^{bottom}_y + a^{left}_y + \frac{f^{motor}_y}{m_{node
 where $c_x$, $c_y$ denote x and y coordinates of a node, respectively, and $v_x$, $v_y$ denote x and y velocities of a node, respectively. 
 
 We model the cytoskeleton near the fusion pore by a single, randomly directed microtubule, and by a denser network of actin filaments with a nucleation point on one of the edge nodes. Molecular motors are directly or indirectly (which we do not distinguish in this model) connected to the exposed capsid M1 proteins and to the cytoskeleton, allowing them to exert forces on the capsid. Specifically, dynein motors can walk in a single direction along the microtubule, while myosin motors can walk along actin filaments in random directions away from the nucleation point. Dyneins can connect to any of the inner nodes, but they can only exert forces on the capsid if they fall within the microtubular area of effect, determined by its width (Figure \ref{figure:fluMassSpring}A).
-We compute the resulting forces through a tug-of-war model with experimentally determined motor characteristics \cite{gennerich2007force, muller2008tug, norstrom2010unconventional}, which we modified to represent dyneins, kinesins, and positive- and negative-direction myosins. Importantly, the model considers that the force exerted by each individual motor depends on all the other motors bound to the same cargo, and assumes that forces exerted by the motors are proportional to their respective stall forces. Detailed derivation of two dimensional Tug-of-War equations is described in Appendix \ref{appendix:2DTugOfWar}.
+We compute the resulting forces through a tug-of-war model with experimentally determined motor characteristics \cite{gennerich2007force, muller2008tug, norstrom2010unconventional}, which we modified to represent dyneins, kinesins, and positive- and negative-direction myosins. Importantly, the model considers that the force exerted by each individual motor depends on all the other motors bound to the same cargo, and assumes that forces exerted by the motors are proportional to their respective stall forces. The detailed derivation of two dimensional tug-of-war equations is described in Appendix \ref{appendix:2DTugOfWar}.
  
 To avoid division by zero, in simulations we assume that there are always one dynein and one kinesin bound to the endosome outside of the fusion pore because the endosome had to be transported inside the cell to initiate fusion pore formation. Due to the architecture of the Tug-of-War model and since all the microtubular motors can only generate forces along the microtubule, adding more endosomal motors would simply offset the optimal amount of dynein motors required for efficient breakage. All other motors are bound to the capsid from the very start of the simulation.
  
 During simulations of the mass-spring model, each motor configuration has a fixed number of each type of motor, but the placement and the directions of cytoskeletal filaments are randomized. The model is simulated for one microsecond of system time at least 100 times for each motor configuration using the MATLAB ODE solver ode15s (Mathworks, Natick / MA).
 
-After a simulation, we examine the distance between all neighboring nodes in both x and y directions. If during the simulation the combined motor forces were sufficient to make any of the distances exceed the RNP complex diameter (a mock-up example for the one-dimensional case of break/no break scenarios showed in Figure \ref{figure:PersistentBreaks}) for at least half the simulated system time (to avoid counting transient breaks), we classified the capsid as broken. Usually, however, if capsid breakage occurs, the initial break happens early in the simulation and persists through 80-90\% of the simulation time (Figure \ref{figure:BreakDuration}).
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.95\textwidth, trim={0cm 0cm 0cm 0cm}, clip]{D_chapters/1_TugOfWar/SUPPLEMENTARYFIGURE1A.pdf}
-\caption[Persistent and momentary capsid breaks]%
-{Persistent and momentary capsid breaks on a one-dimensional mass-spring system example.}
-\label{figure:PersistentBreaks}
-\end{center}
-\end{figure}
+After a simulation, we examine the distance between all neighboring nodes in both $x$ and $y$ directions. If during the simulation the combined motor forces were sufficient to make any of the distances exceed the RNP complex diameter (a mock-up example for the one-dimensional case of break/no break scenarios showed in Figure \ref{figure:PersistentBreaks}) for at least half the simulated system time (to avoid counting transient breaks), we classified the capsid as broken. Usually, however, if capsid breakage occurs, the initial break happens early in the simulation and persists through 80-90\% of the simulation time (Figure \ref{figure:BreakDuration}).
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.95\textwidth, trim={0cm 0cm 0cm 0cm}, clip]{D_chapters/1_TugOfWar/SUPPLEMENTARYFIGURE1B.pdf}
-\caption[Most simulations that achieve a break have it occur early and persist for the most of the simulation]%
-{Most simulations that achieve a break have it occur early and persist for the most of the simulation. \par
+\caption[Most simulations that achieve a break have it occur early and persist for most of the simulation]%
+{Most simulations that achieve a break have it occur early and persist for most of the simulation. \par
 The total break time (fraction of time points in which the system is broken) and initial break times for simulations where breakage occurred for a 4x4 grid with one dynein and four myosin motors. Most simulations that achieve a break have the initial break early on (~10-8 s, for a total 10-6 s simulation time).}
 \label{figure:BreakDuration}
 \end{center}
@@ -94,7 +85,7 @@ To simplify computation of the capsid breakage probability, we interpolated it a
 \begin{center}
 \includegraphics[width=0.95\textwidth, trim={0cm 0cm 0cm 0cm}, clip]{D_chapters/1_TugOfWar/SUPPLEMENTARYFIGURE1D.pdf}
 \caption[Collaborative breakage by molecular motors and the interpolated capsid breakage probability]%
-{Collaborative breakage by myosin and dynein motors (left) and the interpolated capsid breakage probability (right) that is used to estimate capsid breakage in the reaction model.}
+{Collaborative breakage by myosin and dynein motors (left) and the interpolated capsid breakage probability (right) that is used in Chapter \ref{ch:ReactionModels} to estimate capsid breakage in the reaction model.}
 \label{figure:MassSpringInterpolation}
 \end{center}
 \end{figure}
