@@ -6,21 +6,12 @@ The mostly cytoplasmic deacetylase HDAC6 plays an important role in the manageme
 \begin{center}
 \includegraphics[width=0.8\textwidth, trim={1.0cm 1.0cm 1.0cm 1.0cm}, clip]{D_chapters/1_TugOfWar/SchematicUncoating.pdf}
 \caption[HDAC6-mediated influenza A virus M1 capsid disassembly mechanism]%
-{Schematic representation of HDAC6-mediated influenza A virus M1 capsid disassembly mechanism, adapted from \cite{banerjee2014influenza}. \par Influenza virions enter the host cell through receptor-mediated endocytosis. An endosome with the viral particle is transported along microtubules by the molecular motors dynein and kinesin. Endosomal acidification during the transport towards the cell nucleus primes the viral core for uncoating via the influx of protons and potassium into the core through the viral M2 channel. At the critical pH, viral HA triggers fusion of the viral envelope with the endosomal membrane, forming a fusion pore and exposing the viral matrix protein M1 to the cytosol. The virus mimics misfolded proteins by carrying unanchored ubiquitin (Ub) chains. The current conceptual model assumes that HDAC6 binds these Ub chains and recruits molecular motors dynein and myosin 10 for the transport along microtubules towards the aggresome \cite{banerjee2014influenza} - a perinuclear assembly of misfolded proteins at the microtubule organizing center (MTOC). Forces exerted by the motors break the viral capsid and thereby release viral genetic material. Adapted from \cite{banerjee2014influenza}}
+{Schematic representation of HDAC6-mediated influenza A virus M1 capsid disassembly mechanism, adapted from \cite{banerjee2014influenza}. \par Influenza virions enter the host cell through receptor-mediated endocytosis. An endosome with the viral particle is transported along microtubules by the molecular motors dynein and kinesin. Endosomal acidification during the transport towards the cell nucleus primes the viral core for uncoating via the influx of protons and potassium into the core through the viral M2 channel. At the critical pH, viral HA triggers fusion of the viral envelope with the endosomal membrane, forming a fusion pore and exposing the viral matrix protein M1 to the cytosol. The virus mimics misfolded proteins by carrying unanchored ubiquitin (Ub) chains. The current conceptual model assumes that HDAC6 binds these Ub chains and recruits molecular motors dynein and myosin 10 for the transport along microtubules towards the aggresome \cite{banerjee2014influenza} - a perinuclear assembly of misfolded proteins at the microtubule organizing center (MTOC). Forces exerted by the motors break the viral capsid and thereby release viral genetic material. Adapted from \cite{banerjee2014influenza}.}
 \label{figure:fluUncoating}
 \end{center}
 \end{figure}
 
 To represent the underlying biophysics of a tug-of-war mechanism, we developed a mathematical model. It features the capsid at the stage when it is exposed via the fusion pore, interactions between the capsid and molecular motors, and interactions between motors and the host cell’s cytoskeleton (Figure \ref{figure:fluMassSpring}A). Specifically, we assume that M1 proteins (the masses) are arranged in a regular mesh approximately of the size of the fusion pore \cite{hilsch2014influenza}; they are connected to each other by elastic bonds (springs with Morse potentials; see Methods \ref{ch:TugOfWarMethods} for details). We represent the cytoskeleton by a single, randomly directed microtubule and by a denser network of actin filaments with a randomly located nucleation point. Molecular motors can be connected (directly or indirectly, which we do not distinguish in this model) to the M1 proteins exposed to the cytoplasm and to the cytoskeleton, and thereby exert forces. Specifically, dynein motors can walk along the microtubule in a single direction, while myosin motors can walk along actin filaments in random directions. We compute the resulting forces through a tug-of-war model with experimentally determined motor characteristics \cite{gennerich2007force, muller2008tug, norstrom2010unconventional}, which we modified to represent dyneins, kinesins, and positive- and negative-direction myosins. Importantly, the model considers that the force exerted by each individual motor depends on all the other motors bound to the same cargo. If these combined motor forces lead to the distance between any two neighboring M1 nodes exceeding the diameter of the viral ribonucleoprotein (RNP) complex for a sufficient duration (persistent breaks, Figure \ref{figure:PersistentBreaks}), we classify the capsid as broken (see Methods \ref{ch:TugOfWarMethods} for details).
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.95\textwidth, trim={0cm 0cm 0cm 0cm}, clip]{D_chapters/1_TugOfWar/SUPPLEMENTARYFIGURE1A.pdf}
-\caption[Persistent and momentary capsid breaks]%
-{Persistent and momentary capsid breaks on a one-dimensional mass-spring system example.}
-\label{figure:PersistentBreaks}
-\end{center}
-\end{figure}
 
 \begin{figure}
 \begin{center}
@@ -30,6 +21,15 @@ To represent the underlying biophysics of a tug-of-war mechanism, we developed a
 (A) Structure of the two-dimensional viral capsid model. Exposed M1 protein in the viral capsid is represented as a square grid with edges anchored in the lipid bilayer. One microtubule is randomly oriented relative to the capsid. Dynein and myosin motors are attached to the exposed capsid proteins. Dyneins are only able to move along the microtubule, while myosins can move in any direction along the dense actin filament network anchored at the fusion pore with the nucleation point (see Methods \ref{ch:TugOfWarMethods} for details).\par
 (B) Predicted capsid breakage probabilities for varying numbers of myosin and dynein motors, and combinations thereof, when they are attached to the capsid. Simulation results are presented as means and standard deviations for at least 100 random motor configurations. Insets illustrate geometries of selected configurations as in (A).}
 \label{figure:fluMassSpring}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.95\textwidth, trim={0cm 0cm 0cm 0cm}, clip]{D_chapters/1_TugOfWar/SUPPLEMENTARYFIGURE1A.pdf}
+\caption[Persistent and momentary capsid breaks]%
+{Persistent and momentary capsid breaks on a one-dimensional mass-spring system example. Each colored line shows capsid protein coordinate over time. Vertical red lines show initial moment when capsid breakage occurs.}
+\label{figure:PersistentBreaks}
 \end{center}
 \end{figure}
 

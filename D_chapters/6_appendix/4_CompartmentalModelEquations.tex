@@ -20,6 +20,7 @@ All models use the following notation:
 \item $i_{fraction}$ - infectious fraction,
 \item $\epsilon_{drug}$ - drug effect,
 \item $\phi$ - rate of DARPin-F10 production or depletion, for all the models it is set to 0,
+\item $T_0$ - initial number of target cells,
 \item $EC_{50}^{Target}$ half maximal effective concentration of target cells,
 \item $n^{Target}$ Hill coefficient of target depletion,
 \item $IC_{50}^{DARPin-F10}$ half maximal inhibiting concentration of DARPin-F10 cells,
@@ -29,7 +30,7 @@ All models use the following notation:
 For all the delay models the history is set to initial conditions, except for total and infectious virus which are multiplied by sigmoid function $S(t)$ to simulate the addition of virus to the cells.
 
 \begin{equation}
-S(t) = \frac{1}{1 + exp(-100t)}
+S(t) = \frac{1}{1 + \exp(-100t)}
 \end{equation}
 
 \subsection{TIRVV$_i$}
