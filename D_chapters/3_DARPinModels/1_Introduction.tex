@@ -44,17 +44,9 @@ Our collaborators from Patrick Matthias’ group at FMI showed that DARPin-F10 h
 
 Knowing that DARPin-F10 binds to HDAC6-ZnF we can reasonably assume that during influenza uncoating it acts as a competitor against polyubiquitin chains. In this chapter, we use that assumption, and introduce DARPin-F10 to our HDAC6 complex formation models.
 
-\subsection{Influenza infection modelling}
+\subsection{Non-structured kinetic models of influenza infection}
 
-Seasonal and zoonotic influenza is a popular subject of viral modelling, which has a variety of approaches. The majority of viral models use systems of ordinary differential equations (ODE), but partial (PDE) and delay differential equations (DDE) have also been implemented.
-
-Influenza infection dynamic models are focused primarily capturing the transmission between hosts, with the goal of informing public health decisions and assist in pandemic planning \cite{ferguson2006strategies, mcvernon2007model}.
-
-With the advancement of social media, a new type of influenza forecasting models has emerged \cite{pawelek2014modeling, santillana2015combining, levy2018modeling}, relying on publicly available self-reporting by users.
-
-Structured models which include individual processes in virus replication \cite{sidorenko2004structured}, endosomal escape \cite{lagache2012modeling} and defective viral particle propagation \cite{rudiger2019multiscale} have been proposed. Their phenomenological nature means that they often rely on unobserved quantities and variables, and do not allow for inference on specific molecular targets for intervention.
-
-Non-structured influenza kinetic models aim to understand and quantify the progression of the infection within a host or a cell culture, and resulting severity and duration \cite{beauchemin2008modeling}. This type of models has been used to help identify replication differences between different influenza strains \cite{simon2016avian}, impact of faulty viral particles on infection outcomes \cite{frensing2013continuous}, and effects of antiviral drugs on influenza infection \cite{beauchemin2008modeling, handel2007neuraminidase, holder2011assessing}. These models rely on directly observed experimental quantities for parameter fitting, however, often the datasets are reused, rather than collected with mathematical modelling in mind \cite{boianelli2015modeling}. \textit{In vitro} models usually have a simple and understandable structure, however, this simplicity makes inference and analysis of specific molecular targets largely impossible. \textit{In vivo} kinetic models build up on that basic structure and attempt to incorporate innate \cite{beauchemin2008modeling, handel2010towards,miao2010quantifying} and adaptive \cite{belz2002compromised, handel2010towards, miao2010quantifying} immune response. Here we primarily focus on \textit{in vitro} models, as our DARPin-F10 experimental data is coming from cell culture experiments.
+Non-structured kinetic models of influenza infection have been used to identify replication differences between different influenza strains \cite{simon2016avian}, impact of faulty viral particles on infection outcomes \cite{frensing2013continuous}, and effects of antiviral drugs on influenza infection \cite{beauchemin2008modeling, handel2007neuraminidase, holder2011assessing}. These models rely on directly observed experimental quantities for parameter fitting, however, often the datasets are reused, rather than collected with mathematical modelling in mind \cite{boianelli2015modeling}. \textit{In vitro} models usually have a simple and understandable structure, however, this simplicity makes inference and analysis of specific molecular targets largely impossible. \textit{In vivo} kinetic models build up on that basic structure and attempt to incorporate innate \cite{beauchemin2008modeling, handel2010towards,miao2010quantifying} and adaptive \cite{belz2002compromised, handel2010towards, miao2010quantifying} immune response. Here we primarily focus on \textit{in vitro} models, as our DARPin-F10 experimental data is coming from cell culture experiments.
 
 The chronic infection kinetic model, originally proposed for human immunodeficiency virus (HIV) \cite{perelson2002modelling}, includes three states: $T$ - target cells, $I$ - infected cells, $V$ - viral particles, which are described as a system of ODEs:
 
@@ -95,9 +87,9 @@ An alternative approach to modeling this latency is through the use of a system 
 
 \begin{equation}
 \begin{array}{rcl}
-&\frac{dT}{dt} = - \beta T(t) V(t) \\
-&\frac{dI}{dt} = \beta T(t-\tau) V(t-\tau) - \delta I(t) \\
-&\frac{dV}{dt} = p I(t) - c V(t)
+\frac{dT}{dt} &=& - \beta T(t) V(t) \\
+\frac{dI}{dt} &=& \beta T(t-\tau) V(t-\tau) - \delta I(t) \\
+\frac{dV}{dt} &=& p I(t) - c V(t)
 \end{array}
 \end{equation}
 

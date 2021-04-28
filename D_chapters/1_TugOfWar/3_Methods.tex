@@ -24,7 +24,7 @@ Each of the inner nodes of the capsid is acted on by the elastic forces of the 4
 where $\delta x = x_{neighbor} - x_{current}$ and $\delta y = y_{neighbor} - y_{current}$ are the differences between the x and y coordinates of the neighbor node and the current node, and $l_{equilibrium}$ is the equilibrium spring length. The change in spring length $\delta l$ determines the force acting on the node, created by each particular spring. We compute the force as
 
 \begin{equation}
-f_{Morse spring} = -2 a^{type} D^{type} \exp(-a^{type} \delta l) \big(1 - \exp(-a^{type} \delta l)\big)
+f_{Morse\text{ }spring} = -2 a^{type} D^{type} \exp(-a^{type} \delta l) \big(1 - \exp(-a^{type} \delta l)\big)
 \end{equation}
  
 where $a^{type}$ and $D^{type}$ are the parameters of the Morse spring, depending on the spring’s type (inner nodes corresponding to capsid parameters and edge nodes to capsid with lipid bilayer cover).
@@ -32,7 +32,7 @@ where $a^{type}$ and $D^{type}$ are the parameters of the Morse spring, dependin
 We then compute the projections on the x and the y axis of the acceleration created by each of the spring forces as follows:
 
 \begin{equation}
-a^{spring}_z = \frac{f_{Morse spring}}{m_{node}} \Big(\frac{-\delta z}{(\delta x)^2 + (\delta y)^2}\Big)
+a^{spring}_z = \frac{f_{Morse\text{ }spring}}{m_{node}} \Big(\frac{-\delta z}{(\delta x)^2 + (\delta y)^2}\Big)
 \end{equation}
 
 where $m_{node}$ is the node’s mass and $z$ stands for either $x$ or $y$.
