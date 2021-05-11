@@ -79,7 +79,7 @@ The total break time (fraction of time points in which the system is broken) and
 
 To analyze the robustness of the simulation results to changes in capsid parameters, we fixed a combination of motors (5 myosins and 1 dynein) that produced approximately 50\% breakage, and varied the capsid bond parameters stiffness $k_e$ and dissociation energy $D_e$. The values used in our simulations were $k_e \in$ [0.001, \textbf{0.002}, 0.003, 0.004, 0.005] N/m and $D_e \in$ [10, 12, \textbf{14}, 16, 18, 20] kJ, where boldface indicates the default values (Figure \ref{figure:StiffnessEnergy}).
 
-To simplify computation of the capsid breakage probability, we interpolated it as a function of the total amount of molecular motors and the number of dynein motors using the R package akima on the basis of the values obtained from simulation of the mass-spring model (Figure \ref{figure:MassSpringInterpolation}).
+To simplify computation of the capsid breakage probability, we interpolated it as a function of the total amount of molecular motors and the number of dynein motors using the R package \texttt{akima} on the basis of the values obtained from simulation of the mass-spring model (Figure \ref{figure:MassSpringInterpolation}).
 
 \begin{figure}
 \begin{center}
